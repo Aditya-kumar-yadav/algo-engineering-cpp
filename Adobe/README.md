@@ -1,6 +1,5 @@
 | Difficulty   | Title                                                     |   Frequency |   Acceptance Rate | Link                                                                                    | Topics                                                                                                     |
 |:-------------|:----------------------------------------------------------|------------:|------------------:|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Difficulty | Title | Frequency | Acceptance | Link | Topics |
 | EASY         | Two Sum                                                   |         100 |          0.558000 | https://leetcode.com/problems/two-sum                                                   | Array, Hash Table                                                                                          |
 
 | EASY         | Split the Array                                           |        80.8 |          0.592000 | https://leetcode.com/problems/split-the-array                                           | Array, Hash Table, Counting                                                                                |
