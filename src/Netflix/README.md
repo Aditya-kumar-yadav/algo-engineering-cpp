@@ -1,40 +1,70 @@
-| Difficulty   | Title                                                     |   Frequency |   Acceptance Rate | Link                                                                                    | Topics                                                                                                     |
-|:-------------|:----------------------------------------------------------|------------:|------------------:|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| EASY         | Logger Rate Limiter                                       |       100.0 |          0.766103 | https://leetcode.com/problems/logger-rate-limiter                                      | Hash Table, Design, Data Stream                                                                           |
-| EASY         | Contains Duplicate                                        |        89.2 |          0.632364 | https://leetcode.com/problems/contains-duplicate                                       | Array, Hash Table, Sorting                                                                                |
-| EASY         | Contains Duplicate II                                     |        89.2 |          0.490499 | https://leetcode.com/problems/contains-duplicate-ii                                    | Array, Hash Table, Sliding Window                                                                         |
-| EASY         | Summary Ranges                                            |        76.7 |          0.530248 | https://leetcode.com/problems/summary-ranges                                           | Array                                                                                                     |
-| EASY         | Best Time to Buy and Sell Stock                           |        61.3 |          0.552596 | https://leetcode.com/problems/best-time-to-buy-and-sell-stock                          | Array, Dynamic Programming                                                                                |
-| EASY         | Valid Parentheses                                         |        57.2 |          0.423228 | https://leetcode.com/problems/valid-parentheses                                        | String, Stack                                                                                             |
-| EASY         | Implement Queue using Stacks                              |        52.3 |          0.680608 | https://leetcode.com/problems/implement-queue-using-stacks                             | Stack, Design, Queue                                                                                      |
-| EASY         | Merge Sorted Array                                        |        52.3 |          0.529195 | https://leetcode.com/problems/merge-sorted-array                                       | Array, Two Pointers, Sorting                                                                              |
-| EASY         | To Be Or Not To Be                                        |        52.3 |          0.629581 | https://leetcode.com/problems/to-be-or-not-to-be                                       |                                                                                                           |
-| MEDIUM       | Cache With Time Limit                                     |       100.0 |          0.757874 | https://leetcode.com/problems/cache-with-time-limit                                    |                                                                                                           |
-| MEDIUM       | Merge Intervals                                           |       100.0 |          0.493952 | https://leetcode.com/problems/merge-intervals                                          | Array, Sorting                                                                                            |
-| MEDIUM       | Koko Eating Bananas                                       |        89.2 |          0.490673 | https://leetcode.com/problems/koko-eating-bananas                                      | Array, Binary Search                                                                                      |
-| MEDIUM       | Meeting Rooms II                                          |        88.1 |          0.521417 | https://leetcode.com/problems/meeting-rooms-ii                                         | Array, Two Pointers, Greedy, Sorting, Heap (Priority Queue), Prefix Sum                                   |
-| MEDIUM       | Random Pick with Weight                                   |        85.8 |          0.482784 | https://leetcode.com/problems/random-pick-with-weight                                  | Array, Math, Binary Search, Prefix Sum, Randomized                                                        |
-| MEDIUM       | Flatten Nested List Iterator                              |        80.2 |          0.652284 | https://leetcode.com/problems/flatten-nested-list-iterator                             | Stack, Tree, Depth-First Search, Design, Queue, Iterator                                                  |
-| MEDIUM       | LRU Cache                                                 |        76.7 |          0.452146 | https://leetcode.com/problems/lru-cache                                                | Hash Table, Linked List, Design, Doubly-Linked List                                                       |
-| MEDIUM       | Time Based Key-Value Store                                |        76.7 |          0.493663 | https://leetcode.com/problems/time-based-key-value-store                               | Hash Table, String, Binary Search, Design                                                                 |
-| MEDIUM       | Top K Frequent Elements                                   |        76.7 |          0.645660 | https://leetcode.com/problems/top-k-frequent-elements                                  | Array, Hash Table, Divide and Conquer, Sorting, Heap (Priority Queue), Bucket Sort, Counting, Quickselect |
-| MEDIUM       | Longest Substring Without Repeating Characters            |        73.2 |          0.369362 | https://leetcode.com/problems/longest-substring-without-repeating-characters           | Hash Table, String, Sliding Window                                                                        |
-| MEDIUM       | Word Search                                               |        73.2 |          0.452670 | https://leetcode.com/problems/word-search                                              | Array, String, Backtracking, Depth-First Search, Matrix                                                   |
-| MEDIUM       | Network Delay Time                                        |        64.1 |          0.574423 | https://leetcode.com/problems/network-delay-time                                       | Depth-First Search, Breadth-First Search, Graph, Heap (Priority Queue), Shortest Path                     |
-| MEDIUM       | Word Break                                                |        64.1 |          0.482738 | https://leetcode.com/problems/word-break                                               | Array, Hash Table, String, Dynamic Programming, Trie, Memoization                                         |
-| MEDIUM       | Daily Temperatures                                        |        61.3 |          0.673650 | https://leetcode.com/problems/daily-temperatures                                       | Array, Stack, Monotonic Stack                                                                             |
-| MEDIUM       | Insert Delete GetRandom O(1)                              |        61.3 |          0.549919 | https://leetcode.com/problems/insert-delete-getrandom-o1                               | Array, Hash Table, Math, Design, Randomized                                                               |
-| MEDIUM       | Top K Frequent Words                                      |        61.3 |          0.592772 | https://leetcode.com/problems/top-k-frequent-words                                     | Array, Hash Table, String, Trie, Sorting, Heap (Priority Queue), Bucket Sort, Counting                    |
-| MEDIUM       | Course Schedule II                                        |        57.2 |          0.534235 | https://leetcode.com/problems/course-schedule-ii                                       | Depth-First Search, Breadth-First Search, Graph, Topological Sort                                         |
-| MEDIUM       | Search in Rotated Sorted Array                            |        57.2 |          0.428372 | https://leetcode.com/problems/search-in-rotated-sorted-array                           | Array, Binary Search                                                                                      |
-| MEDIUM       | Minimum Remove to Make Valid Parentheses                  |        52.3 |          0.707465 | https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses                 | String, Stack                                                                                             |
-| MEDIUM       | Rotate Array                                              |        52.3 |          0.430214 | https://leetcode.com/problems/rotate-array                                             | Array, Math, Two Pointers                                                                                 |
-| MEDIUM       | Rotate Image                                              |        52.3 |          0.779017 | https://leetcode.com/problems/rotate-image                                             | Array, Math, Matrix                                                                                       |
-| MEDIUM       | Spiral Matrix                                             |        52.3 |          0.539397 | https://leetcode.com/problems/spiral-matrix                                            | Array, Matrix, Simulation                                                                                 |
-| MEDIUM       | Coin Change                                               |        48.3 |          0.464955 | https://leetcode.com/problems/coin-change                                              | Array, Dynamic Programming, Breadth-First Search                                                          |
-| MEDIUM       | Generate Parentheses                                      |        48.3 |          0.771329 | https://leetcode.com/problems/generate-parentheses                                     | String, Dynamic Programming, Backtracking                                                                 |
-| HARD         | Contains Duplicate III                                    |       100.0 |          0.236334 | https://leetcode.com/problems/contains-duplicate-iii                                   | Array, Sliding Window, Sorting, Bucket Sort, Ordered Set                                                  |
-| HARD         | Reconstruct Itinerary                                     |       100.0 |          0.436056 | https://leetcode.com/problems/reconstruct-itinerary                                    | Depth-First Search, Graph, Eulerian Circuit                                                               |
-| HARD         | First Missing Positive                                    |        92.2 |          0.410847 | https://leetcode.com/problems/first-missing-positive                                   | Array, Hash Table                                                                                         |
-| HARD         | Number of Flowers in Full Bloom                           |        52.3 |          0.571754 | https://leetcode.com/problems/number-of-flowers-in-full-bloom                          | Array, Hash Table, Binary Search, Sorting, Prefix Sum, Ordered Set                                        |
-| HARD         | Text Justification                                        |        52.3 |          0.481499 | https://leetcode.com/problems/text-justification                                       | Array, String, Simulation                                                                                 |
+# 📊 LeetCode Problem Breakdown
+
+> Curated list of **38 LeetCode problems** sorted by frequency within each difficulty tier.
+
+---
+
+<details open id="-easy-problems">
+<summary><b>🟢 Easy Problems (9)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| <kbd>🟢 EASY</kbd> | **Logger Rate Limiter** | `100.0` | `76.6%` | [Solve](https://leetcode.com/problems/logger-rate-limiter) | `Hash Table`, `Design`, `Data Stream` |
+| <kbd>🟢 EASY</kbd> | **Contains Duplicate** | `89.2` | `63.2%` | [Solve](https://leetcode.com/problems/contains-duplicate) | `Array`, `Hash Table`, `Sorting` |
+| <kbd>🟢 EASY</kbd> | **Contains Duplicate II** | `89.2` | `49.0%` | [Solve](https://leetcode.com/problems/contains-duplicate-ii) | `Array`, `Hash Table`, `Sliding Window` |
+| <kbd>🟢 EASY</kbd> | **Summary Ranges** | `76.7` | `53.0%` | [Solve](https://leetcode.com/problems/summary-ranges) | `Array` |
+| <kbd>🟢 EASY</kbd> | **Best Time to Buy and Sell Stock** | `61.3` | `55.3%` | [Solve](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | `Array`, `Dynamic Programming` |
+| <kbd>🟢 EASY</kbd> | **Valid Parentheses** | `57.2` | `42.3%` | [Solve](https://leetcode.com/problems/valid-parentheses) | `String`, `Stack` |
+| <kbd>🟢 EASY</kbd> | **Implement Queue using Stacks** | `52.3` | `68.1%` | [Solve](https://leetcode.com/problems/implement-queue-using-stacks) | `Stack`, `Design`, `Queue` |
+| <kbd>🟢 EASY</kbd> | **Merge Sorted Array** | `52.3` | `52.9%` | [Solve](https://leetcode.com/problems/merge-sorted-array) | `Array`, `Two Pointers`, `Sorting` |
+| <kbd>🟢 EASY</kbd> | **To Be Or Not To Be** | `52.3` | `63.0%` | [Solve](https://leetcode.com/problems/to-be-or-not-to-be) |  |
+
+</details>
+
+<details open id="-medium-problems">
+<summary><b>🟡 Medium Problems (24)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| <kbd>🟡 MEDIUM</kbd> | **Cache With Time Limit** | `100.0` | `75.8%` | [Solve](https://leetcode.com/problems/cache-with-time-limit) |  |
+| <kbd>🟡 MEDIUM</kbd> | **Merge Intervals** | `100.0` | `49.4%` | [Solve](https://leetcode.com/problems/merge-intervals) | `Array`, `Sorting` |
+| <kbd>🟡 MEDIUM</kbd> | **Koko Eating Bananas** | `89.2` | `49.1%` | [Solve](https://leetcode.com/problems/koko-eating-bananas) | `Array`, `Binary Search` |
+| <kbd>🟡 MEDIUM</kbd> | **Meeting Rooms II** | `88.1` | `52.1%` | [Solve](https://leetcode.com/problems/meeting-rooms-ii) | `Array`, `Two Pointers`, `Greedy`, `Sorting`, `Heap (Priority Queue)`, `Prefix Sum` |
+| <kbd>🟡 MEDIUM</kbd> | **Random Pick with Weight** | `85.8` | `48.3%` | [Solve](https://leetcode.com/problems/random-pick-with-weight) | `Array`, `Math`, `Binary Search`, `Prefix Sum`, `Randomized` |
+| <kbd>🟡 MEDIUM</kbd> | **Flatten Nested List Iterator** | `80.2` | `65.2%` | [Solve](https://leetcode.com/problems/flatten-nested-list-iterator) | `Stack`, `Tree`, `Depth-First Search`, `Design`, `Queue`, `Iterator` |
+| <kbd>🟡 MEDIUM</kbd> | **LRU Cache** | `76.7` | `45.2%` | [Solve](https://leetcode.com/problems/lru-cache) | `Hash Table`, `Linked List`, `Design`, `Doubly-Linked List` |
+| <kbd>🟡 MEDIUM</kbd> | **Time Based Key-Value Store** | `76.7` | `49.4%` | [Solve](https://leetcode.com/problems/time-based-key-value-store) | `Hash Table`, `String`, `Binary Search`, `Design` |
+| <kbd>🟡 MEDIUM</kbd> | **Top K Frequent Elements** | `76.7` | `64.6%` | [Solve](https://leetcode.com/problems/top-k-frequent-elements) | `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect` |
+| <kbd>🟡 MEDIUM</kbd> | **Longest Substring Without Repeating Characters** | `73.2` | `36.9%` | [Solve](https://leetcode.com/problems/longest-substring-without-repeating-characters) | `Hash Table`, `String`, `Sliding Window` |
+| <kbd>🟡 MEDIUM</kbd> | **Word Search** | `73.2` | `45.3%` | [Solve](https://leetcode.com/problems/word-search) | `Array`, `String`, `Backtracking`, `Depth-First Search`, `Matrix` |
+| <kbd>🟡 MEDIUM</kbd> | **Network Delay Time** | `64.1` | `57.4%` | [Solve](https://leetcode.com/problems/network-delay-time) | `Depth-First Search`, `Breadth-First Search`, `Graph`, `Heap (Priority Queue)`, `Shortest Path` |
+| <kbd>🟡 MEDIUM</kbd> | **Word Break** | `64.1` | `48.3%` | [Solve](https://leetcode.com/problems/word-break) | `Array`, `Hash Table`, `String`, `Dynamic Programming`, `Trie`, `Memoization` |
+| <kbd>🟡 MEDIUM</kbd> | **Daily Temperatures** | `61.3` | `67.4%` | [Solve](https://leetcode.com/problems/daily-temperatures) | `Array`, `Stack`, `Monotonic Stack` |
+| <kbd>🟡 MEDIUM</kbd> | **Insert Delete GetRandom O(1)** | `61.3` | `55.0%` | [Solve](https://leetcode.com/problems/insert-delete-getrandom-o1) | `Array`, `Hash Table`, `Math`, `Design`, `Randomized` |
+| <kbd>🟡 MEDIUM</kbd> | **Top K Frequent Words** | `61.3` | `59.3%` | [Solve](https://leetcode.com/problems/top-k-frequent-words) | `Array`, `Hash Table`, `String`, `Trie`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting` |
+| <kbd>🟡 MEDIUM</kbd> | **Course Schedule II** | `57.2` | `53.4%` | [Solve](https://leetcode.com/problems/course-schedule-ii) | `Depth-First Search`, `Breadth-First Search`, `Graph`, `Topological Sort` |
+| <kbd>🟡 MEDIUM</kbd> | **Search in Rotated Sorted Array** | `57.2` | `42.8%` | [Solve](https://leetcode.com/problems/search-in-rotated-sorted-array) | `Array`, `Binary Search` |
+| <kbd>🟡 MEDIUM</kbd> | **Minimum Remove to Make Valid Parentheses** | `52.3` | `70.7%` | [Solve](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses) | `String`, `Stack` |
+| <kbd>🟡 MEDIUM</kbd> | **Rotate Array** | `52.3` | `43.0%` | [Solve](https://leetcode.com/problems/rotate-array) | `Array`, `Math`, `Two Pointers` |
+| <kbd>🟡 MEDIUM</kbd> | **Rotate Image** | `52.3` | `77.9%` | [Solve](https://leetcode.com/problems/rotate-image) | `Array`, `Math`, `Matrix` |
+| <kbd>🟡 MEDIUM</kbd> | **Spiral Matrix** | `52.3` | `53.9%` | [Solve](https://leetcode.com/problems/spiral-matrix) | `Array`, `Matrix`, `Simulation` |
+| <kbd>🟡 MEDIUM</kbd> | **Coin Change** | `48.3` | `46.5%` | [Solve](https://leetcode.com/problems/coin-change) | `Array`, `Dynamic Programming`, `Breadth-First Search` |
+| <kbd>🟡 MEDIUM</kbd> | **Generate Parentheses** | `48.3` | `77.1%` | [Solve](https://leetcode.com/problems/generate-parentheses) | `String`, `Dynamic Programming`, `Backtracking` |
+
+</details>
+
+<details open id="-hard-problems">
+<summary><b>🔴 Hard Problems (5)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| <kbd>🔴 HARD</kbd> | **Contains Duplicate III** | `100.0` | `23.6%` | [Solve](https://leetcode.com/problems/contains-duplicate-iii) | `Array`, `Sliding Window`, `Sorting`, `Bucket Sort`, `Ordered Set` |
+| <kbd>🔴 HARD</kbd> | **Reconstruct Itinerary** | `100.0` | `43.6%` | [Solve](https://leetcode.com/problems/reconstruct-itinerary) | `Depth-First Search`, `Graph`, `Eulerian Circuit` |
+| <kbd>🔴 HARD</kbd> | **First Missing Positive** | `92.2` | `41.1%` | [Solve](https://leetcode.com/problems/first-missing-positive) | `Array`, `Hash Table` |
+| <kbd>🔴 HARD</kbd> | **Number of Flowers in Full Bloom** | `52.3` | `57.2%` | [Solve](https://leetcode.com/problems/number-of-flowers-in-full-bloom) | `Array`, `Hash Table`, `Binary Search`, `Sorting`, `Prefix Sum`, `Ordered Set` |
+| <kbd>🔴 HARD</kbd> | **Text Justification** | `52.3` | `48.1%` | [Solve](https://leetcode.com/problems/text-justification) | `Array`, `String`, `Simulation` |
+
+</details>

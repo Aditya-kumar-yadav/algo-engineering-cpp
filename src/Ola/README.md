@@ -1,4 +1,25 @@
-| Difficulty   | Title                                                     |   Frequency |   Acceptance Rate | Link                                                                                    | Topics                                                                                                     |
-|:-------------|:----------------------------------------------------------|------------:|------------------:|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| EASY         | Best Time to Buy and Sell Stock                           |       100.0 |          0.552597 | https://leetcode.com/problems/best-time-to-buy-and-sell-stock                          | Array, Dynamic Programming                                                                                |
-| MEDIUM       | Decode String                                             |       100.0 |          0.611527 | https://leetcode.com/problems/decode-string                                            | String, Stack, Recursion                                                                                  |
+# 📊 LeetCode Problem Breakdown
+
+> Curated list of **2 LeetCode problems** sorted by frequency within each difficulty tier.
+
+---
+
+<details open id="-easy-problems">
+<summary><b>🟢 Easy Problems (1)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| <kbd>🟢 EASY</kbd> | **Best Time to Buy and Sell Stock** | `100.0` | `55.3%` | [Solve](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | `Array`, `Dynamic Programming` |
+
+</details>
+
+<details open id="-medium-problems">
+<summary><b>🟡 Medium Problems (1)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| <kbd>🟡 MEDIUM</kbd> | **Decode String** | `100.0` | `61.2%` | [Solve](https://leetcode.com/problems/decode-string) | `String`, `Stack`, `Recursion` |
+
+</details>
