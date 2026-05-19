@@ -1,6 +1,3 @@
-* [🟢 Easy Questions](#-easy-problems-28)
-* [🟡 Medium Questions](#-medium-problems-67)
-* [🔴 Hard Questions](#-hard-problems-17)
 ### Problem Breakdown
 <details open id="-easy-problems-28">
 <summary><b>🟢 Easy Problems (28)</b></summary>
