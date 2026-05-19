@@ -1,3 +1,27 @@
+# 🏢 Adobe Interview Track
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Total%20Questions-112-blue?style=for-the-badge&logo=leetcode" />
+  <img src="https://img.shields.io/badge/Easy-28-🟢%20green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Medium-67-🟡%20yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Hard-17-🔴%20red?style=for-the-badge" />
+</p>
+
+---
+
+### ⚡ Quick Navigation
+* [🟢 Easy Questions](#-easy-problems-28)
+* [🟡 Medium Questions](#-medium-problems-67)
+* [🔴 Hard Questions](#-hard-problems-17)
+
+---
+
+### 📚 Problem Breakdown
+
+<details id="-easy-problems-28">
+<summary><b>🟢 Easy Problems (28)</b></summary>
+<br>
+
 | Difficulty | Title | Frequency | Acceptance | Link | Topics |
 | :---: | :--- | :---: | :---: | :---: | :--- |
 | <kbd>🟢 EASY</kbd> | **Two Sum** | `100.0%` | `55.8%` | [🔗 Solve](https://leetcode.com/problems/two-sum) | `Array`, `Hash Table` |
@@ -28,6 +52,15 @@
 | <kbd>🟢 EASY</kbd> | **Path Sum** | `25.2%` | `53.0%` | [🔗 Solve](https://leetcode.com/problems/path-sum) | `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree` |
 | <kbd>🟢 EASY</kbd> | **Convert Sorted Array to Binary Search Tree** | `18.2%` | `74.1%` | [🔗 Solve](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | `Array`, `Divide and Conquer`, `Tree`, `Binary Search Tree`, `Binary Tree` |
 | <kbd>🟢 EASY</kbd> | **Minimum Depth of Binary Tree** | `18.2%` | `50.7%` | [🔗 Solve](https://leetcode.com/problems/minimum-depth-of-binary-tree) | `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree` |
+
+</details>
+
+<details id="-medium-problems-67">
+<summary><b>🟡 Medium Problems (67)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :---: | :--- | :---: | :---: | :---: | :--- |
 | <kbd>🟡 MEDIUM</kbd> | **Top K Frequent Words** | `100.0%` | `59.3%` | [🔗 Solve](https://leetcode.com/problems/top-k-frequent-words) | `Array`, `Hash Table`, `String`, `Trie`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting` |
 | <kbd>🟡 MEDIUM</kbd> | **Top K Frequent Elements** | `92.0%` | `64.6%` | [🔗 Solve](https://leetcode.com/problems/top-k-frequent-elements) | `Array`, `Hash Table`, `Divide and Conquer`, `Sorting`, `Heap (Priority Queue)`, `Bucket Sort`, `Counting`, `Quickselect` |
 | <kbd>🟡 MEDIUM</kbd> | **Maximum Product Subarray** | `92.0%` | `34.9%` | [🔗 Solve](https://leetcode.com/problems/maximum-product-subarray) | `Array`, `Dynamic Programming` |
@@ -96,6 +129,15 @@
 | <kbd>🟡 MEDIUM</kbd> | **Construct Binary Tree from Inorder and Postorder Traversal** | `18.2%` | `66.1%` | [🔗 Solve](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal) | `Array`, `Hash Table`, `Divide and Conquer`, `Tree`, `Binary Tree` |
 | <kbd>🟡 MEDIUM</kbd> | **Combination Sum** | `18.2%` | `74.7%` | [🔗 Solve](https://leetcode.com/problems/combination-sum) | `Array`, `Backtracking` |
 | <kbd>🟡 MEDIUM</kbd> | **Binary Tree Level Order Traversal** | `17.4%` | `70.6%` | [🔗 Solve](https://leetcode.com/problems/binary-tree-level-order-traversal) | `Tree`, `Breadth-First Search`, `Binary Tree` |
+
+</details>
+
+<details id="-hard-problems-17">
+<summary><b>🔴 Hard Problems (17)</b></summary>
+<br>
+
+| Difficulty | Title | Frequency | Acceptance | Link | Topics |
+| :---: | :--- | :---: | :---: | :---: | :--- |
 | <kbd>🔴 HARD</kbd> | **Longest Increasing Path in a Matrix** | `91.1%` | `55.3%` | [🔗 Solve](https://leetcode.com/problems/longest-increasing-path-in-a-matrix) | `Array`, `Dynamic Programming`, `Depth-First Search`, `Breadth-First Search`, `Graph`, `Topological Sort`, `Memoization`, `Matrix` |
 | <kbd>🔴 HARD</kbd> | **Word Ladder** | `78.7%` | `42.8%` | [🔗 Solve](https://leetcode.com/problems/word-ladder) | `Hash Table`, `String`, `Breadth-First Search` |
 | <kbd>🔴 HARD</kbd> | **Minimum Window Substring** | `78.7%` | `45.4%` | [🔗 Solve](https://leetcode.com/problems/minimum-window-substring) | `Hash Table`, `String`, `Sliding Window` |
@@ -113,3 +155,5 @@
 | <kbd>🔴 HARD</kbd> | **Permutation Sequence** | `30.6%` | `49.9%` | [🔗 Solve](https://leetcode.com/problems/permutation-sequence) | `Math`, `Recursion` |
 | <kbd>🔴 HARD</kbd> | **N-Queens** | `25.2%` | `72.8%` | [🔗 Solve](https://leetcode.com/problems/n-queens) | `Array`, `Backtracking` |
 | <kbd>🔴 HARD</kbd> | **Maximal Rectangle** | `18.2%` | `53.7%` | [🔗 Solve](https://leetcode.com/problems/maximal-rectangle) | `Array`, `Dynamic Programming`, `Stack`, `Matrix`, `Monotonic Stack` |
+
+</details>
