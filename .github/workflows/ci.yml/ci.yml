@@ -1,13 +1,13 @@
 name: Automated Testing
 
-on: [push] 
+on: [push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compile and Test
         run: |
@@ -15,19 +15,15 @@ jobs:
             dir=$(dirname "$sol")
             test_file="$dir/tests.txt"
             
-          if [ -f "$test_file" ]; then
-            echo "Testing $sol..."
-            # Compile
-            g++ -O2 "$sol" -o solution
-            # Run against tests.txt (assuming tests.txt has input)
-            ./solution < "$test_file"
-            
-            # Check if execution was successful
-            if [ $? -ne 0 ]; then
-              echo "Test failed for $sol"
-              exit 1
+            if [ -f "$test_file" ]; then
+              echo "Testing $sol..."
+              g++ -O2 "$sol" -o solution
+              ./solution < "$test_file"
+              if [ $? -ne 0 ]; then
+                echo "Test failed for $sol"
+                exit 1
+              fi
+            else
+              echo "No tests.txt found for $sol, skipping."
             fi
-          else
-            echo "No tests.txt found for $sol, skipping."
-          fi
-        done
+          done
