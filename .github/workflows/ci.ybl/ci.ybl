@@ -1,0 +1,31 @@
+name: Automated Testing
+
+on: [push] 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Compile and Test
+        run: |
+          # Finds all solution.cpp files and runs them against tests.txt
+          find src -name "solution.cpp" | while read sol; do
+            dir=$(dirname "$sol")
+            test_file="$dir/tests.txt"
+            
+            if [ -f "$test_file" ]; then
+              echo "Testing $dir..."
+              g++ "$sol" -o solution_exec
+              ./solution_exec > output.txt
+              
+              if diff -w output.txt "$test_file"; then
+                echo "PASSED: $dir"
+              else
+                echo "FAILED: $dir"
+                exit 1 
+              fi
+            fi
+          done
