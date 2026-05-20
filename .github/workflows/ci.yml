@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    # This ensures the pipeline only triggers if you change code inside src/
+    paths:
+      - 'src/**'
   workflow_dispatch:
 
 jobs:
@@ -15,31 +18,38 @@ jobs:
 
       - name: Compile and Test
         run: |
-          find . -name "solution.cpp" | while read sol; do
+          # Recursively find every solution.cpp in the src/ folder
+          find src -name "solution.cpp" | while read sol; do
             dir=$(dirname "$sol")
             input="$dir/tests.txt"
             expected="$dir/expected.txt"
             
+            # Only test if both input and expected files exist
             if [ -f "$input" ] && [ -f "$expected" ]; then
               echo "-----------------------------------"
               echo "Testing: $sol"
-              g++ -O2 "$sol" -o solution
               
-              # Run solution and save output to a temporary file
-              ./solution < "$input" > actual_output.txt
-              
-              # Compare actual output with expected output (ignoring whitespace)
-              if diff -w -B actual_output.txt "$expected" > /dev/null; then
-                echo "SUCCESS: $sol passed."
+              # Compile with O2 optimization
+              if g++ -O2 "$sol" -o solution; then
+                # Run the solution and save output
+                ./solution < "$input" > actual_output.txt
+                
+                # Compare against expected output
+                if diff -w -B actual_output.txt "$expected" > /dev/null; then
+                  echo "SUCCESS: $sol passed."
+                else
+                  echo "ERROR: Output mismatch for $sol"
+                  echo "--- Expected ---"
+                  cat "$expected"
+                  echo "--- Actual ---"
+                  cat actual_output.txt
+                  exit 1
+                fi
               else
-                echo "ERROR: Output mismatch for $sol"
-                echo "--- Expected Output ---"
-                cat "$expected"
-                echo "--- Your Code's Output ---"
-                cat actual_output.txt
+                echo "ERROR: Compilation failed for $sol"
                 exit 1
               fi
             else
-              echo "SKIP: Missing tests.txt or expected.txt in $dir"
+              echo "SKIP: Missing tests.txt or expected.txt in $dir, skipping $sol"
             fi
           done
