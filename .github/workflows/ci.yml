@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-    # Only run when files inside the 'src' directory are changed
     paths:
       - 'src/**'
   workflow_dispatch:
@@ -18,33 +17,26 @@ jobs:
 
       - name: Compile and Test
         run: |
-          # Find all solution.cpp files within the src directory
+          # Find all solution.cpp files
           find src -name "solution.cpp" | while read sol; do
+            # Get the directory of the current solution file
             dir=$(dirname "$sol")
+            
+            # Look for tests.txt in the same directory
             test_file="$dir/tests.txt"
             
-            # Check if a corresponding tests.txt exists
             if [ -f "$test_file" ]; then
               echo "-----------------------------------"
               echo "Testing: $sol"
-              
-              # Compile the solution
-              if g++ -O2 "$sol" -o solution; then
-                # Run the solution against the test file
-                ./solution < "$test_file"
-                
-                # Check for runtime errors
-                if [ $? -eq 0 ]; then
-                  echo "SUCCESS: $sol passed."
-                else
-                  echo "ERROR: Runtime failure for $sol"
-                  exit 1
-                fi
+              g++ -O2 "$sol" -o solution
+              ./solution < "$test_file"
+              if [ $? -eq 0 ]; then
+                echo "SUCCESS: $sol passed."
               else
-                echo "ERROR: Compilation failed for $sol"
+                echo "ERROR: Test failed for $sol"
                 exit 1
               fi
             else
-              echo "SKIP: No tests.txt found for $sol"
+              echo "SKIP: No tests.txt found in $dir, skipping $sol"
             fi
           done
