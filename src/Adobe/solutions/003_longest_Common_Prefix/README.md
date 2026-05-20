@@ -25,8 +25,8 @@ Write a function to find the longest common prefix string amongst an array of st
 ## ⏱️ Complexity
 | Metric | Complexity |
 | :--- | :--- |
-| **Time** | $O(S)$ where $S$ is the sum of all characters in all strings |
-| **Space** | $O(1)$ |
+| **Time** | O(S) where S is the sum of all characters in all strings |
+| **Space** | O(1) |
 
 ## 💡 Notes
 - Horizontal scanning is the most space-efficient approach.
