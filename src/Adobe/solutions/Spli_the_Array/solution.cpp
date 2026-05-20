@@ -2,11 +2,16 @@
 #include <vector>
 #include <unordered_map>
 
-bool canSplitArray(const std::vector<int>& nums) {
+int main() {
+    int n;
     std::unordered_map<int, int> counts;
-    for (int num : nums) {
-        counts[num]++;
-        if (counts[num] > 2) return false;
+    bool possible = true;
+    
+    // Reads input and checks frequency instantly
+    while (std::cin >> n) {
+        if (++counts[n] > 2) possible = false;
     }
-    return true;
+    
+    std::cout << (possible ? "true" : "false") << std::endl;
+    return 0;
 }
