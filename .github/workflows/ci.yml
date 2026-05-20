@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'src/**'
   workflow_dispatch:
 
 jobs:
@@ -17,26 +15,31 @@ jobs:
 
       - name: Compile and Test
         run: |
-          # Find all solution.cpp files
-          find src -name "solution.cpp" | while read sol; do
-            # Get the directory of the current solution file
+          find . -name "solution.cpp" | while read sol; do
             dir=$(dirname "$sol")
+            input="$dir/tests.txt"
+            expected="$dir/expected.txt"
             
-            # Look for tests.txt in the same directory
-            test_file="$dir/tests.txt"
-            
-            if [ -f "$test_file" ]; then
+            if [ -f "$input" ] && [ -f "$expected" ]; then
               echo "-----------------------------------"
               echo "Testing: $sol"
               g++ -O2 "$sol" -o solution
-              ./solution < "$test_file"
-              if [ $? -eq 0 ]; then
+              
+              # Run solution and save output to a temporary file
+              ./solution < "$input" > actual_output.txt
+              
+              # Compare actual output with expected output (ignoring whitespace)
+              if diff -w -B actual_output.txt "$expected" > /dev/null; then
                 echo "SUCCESS: $sol passed."
               else
-                echo "ERROR: Test failed for $sol"
+                echo "ERROR: Output mismatch for $sol"
+                echo "--- Expected Output ---"
+                cat "$expected"
+                echo "--- Your Code's Output ---"
+                cat actual_output.txt
                 exit 1
               fi
             else
-              echo "SKIP: No tests.txt found in $dir, skipping $sol"
+              echo "SKIP: Missing tests.txt or expected.txt in $dir"
             fi
           done
