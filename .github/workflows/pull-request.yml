@@ -1,0 +1,32 @@
+name: Pull Request Validator
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['src/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Compile and Test
+        run: |
+          find src -name "solution.cpp" | while read sol; do
+            dir=$(dirname "$sol")
+            input="$dir/tests.txt"
+            expected="$dir/expected.txt"
+            
+            if [ -f "$input" ] && [ -f "$expected" ]; then
+              echo "Validating: $sol"
+              g++ -O2 "$sol" -o solution
+              ./solution < "$input" > actual_output.txt
+              
+              if ! diff -w -B actual_output.txt "$expected" > /dev/null; then
+                echo "FAIL: $sol does not match expected output."
+                exit 1
+              fi
+            fi
+          done
