@@ -1,10 +1,10 @@
 import json
 import os
-import re
 
 def main():
-    print("📝 Updating README.md...")
+    print("📝 Updating README.md safely...")
     
+    # 1. Load the database
     try:
         with open('metadata/database.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -12,6 +12,7 @@ def main():
         print("❌ Error: database.json not found. Run auto_discover.py first.")
         return
 
+    # 2. Build the table content
     table_content = "\n| ID | Problem Title | Difficulty | Category | Frequently Asked By |\n"
     table_content += "| :--- | :--- | :---: | :--- | :--- |\n"
     
@@ -25,28 +26,44 @@ def main():
         
         table_content += f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
 
+    # 3. Read the existing README line-by-line
     try:
         with open('README.md', 'r', encoding='utf-8') as f:
-            readme_text = f.read()
+            lines = f.readlines()
     except FileNotFoundError:
         print("❌ Error: README.md not found in the root directory.")
         return
         
-    marker_start = r""
-    marker_end = r""
+    # 4. Find the exact lines where your markers live
+    start_marker = ""
+    end_marker = ""
     
-    pattern = re.compile(rf"({marker_start}).*?({marker_end})", re.DOTALL)
+    start_idx = -1
+    end_idx = -1
     
-    if not pattern.search(readme_text):
-        print("❌ Error: Could not find the injection markers in README.md.")
+    for i, line in enumerate(lines):
+        if start_marker in line:
+            start_idx = i
+        elif end_marker in line:
+            end_idx = i
+            
+    # Safety Check: Did it find both markers in the right order?
+    if start_idx == -1 or end_idx == -1 or start_idx >= end_idx:
+        print("❌ Error: Markers missing or incorrectly placed in README.md.")
+        print("Ensure both and are in the file.")
         return
         
-    new_readme_text = pattern.sub(rf"\1{table_content}\2", readme_text)
+    # 5. Bulletproof Injection: Stitch the top, the new table, and the bottom together
+    top_half = lines[:start_idx + 1]
+    bottom_half = lines[end_idx:]
     
+    new_readme_lines = top_half + [table_content + "\n"] + bottom_half
+    
+    # 6. Write it back safely
     with open('README.md', 'w', encoding='utf-8') as f:
-        f.write(new_readme_text)
+        f.writelines(new_readme_lines)
         
-    print("✅ SUCCESS! README.md table has been updated without touching your description.")
+    print("✅ SUCCESS! README.md table has been updated safely.")
 
 if __name__ == "__main__":
     main()
