@@ -1,16 +1,3 @@
 {
-    "problems": [
-        {
-            "id": 1,
-            "title": "Two Sum",
-            "difficulty": "Easy",
-            "category": "arrays",
-            "companies": [
-                "Amazon",
-                "Google",
-                "Apple",
-                "Adobe"
-            ]
-        }
-    ]
+    "problems": []
 }
