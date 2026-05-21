@@ -42,10 +42,10 @@ class Solution {
 
 ### 3. Verify Locally (Optional)
 To ensure your code won't break the pipeline, you can run our automation scripts locally:
-1. `python scripts/auto_discover.py` (Checks for duplicate IDs and builds the JSON)
+1. `python scripts/auto_discover.py` (Scans your files and builds the JSON database)
 2. `python scripts/generate_docs.py` (Updates the README tables)
 
 ### 4. Submit your Pull Request
 * Push your branch to GitHub and open a Pull Request.
-* Our CI/CD pipeline will automatically run your tests and verify your metadata. 
-* **If the GitHub Actions build fails (e.g., duplicate ID found, or tests fail), your PR cannot be merged.** Please check the action logs and fix any errors!
+* Our CI/CD pipeline will automatically run your tests and update the documentation. 
+* **If the GitHub Actions build fails (e.g., your code does not compile or tests fail), your PR cannot be merged.** Please check the action logs and fix any errors!

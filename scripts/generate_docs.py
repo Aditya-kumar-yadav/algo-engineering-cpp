@@ -1,27 +1,49 @@
 import json
+import os
 
 def main():
-    # 1. Load the database
-    with open('metadata/database.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-        
-    # 2. Print the table headers to the terminal
-    print("\n✅ SUCCESS! COPY AND PASTE THIS EXACT TABLE INTO YOUR README.md:\n")
-    print("| ID | Problem Title | Difficulty | Category | Frequently Asked By |")
-    print("| :--- | :--- | :---: | :--- | :--- |")
+    print("📝 Generating README.md...")
     
-    # 3. Build and print each row
+    # 1. Load the database
+    try:
+        with open('metadata/database.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        print("❌ Error: database.json not found. Run auto_discover.py first.")
+        return
+
+    # 2. Build the top of the README
+    readme_content = "# 🚀 Enterprise LeetCode Solutions\n\n"
+    readme_content += "This repository contains highly optimized, production-ready C++ solutions to LeetCode problems.\n\n"
+    readme_content += "## 📊 Problem Database\n\n"
+    readme_content += "| ID | Problem Title | Difficulty | Category | Frequently Asked By |\n"
+    readme_content += "| :--- | :--- | :---: | :--- | :--- |\n"
+    
+    # 3. Build the table rows
     for prob in data['problems']:
+        # Format ID to always be 4 digits (e.g., 0121)
         prob_id = f"{prob['id']:04d}"
-        emoji = "🟢" if prob['difficulty'].lower() == "easy" else "🟡" if prob['difficulty'].lower() == "medium" else "🔴"
+        
+        # Determine the emoji
+        diff = prob.get('difficulty', 'Unknown').lower()
+        emoji = "🟢" if diff == "easy" else "🟡" if diff == "medium" else "🔴" if diff == "hard" else "⚪"
+        
+        # Build the link directly to the C++ code
         file_name = f"{prob_id}_{prob['title'].lower().replace(' ', '_')}.hpp"
         link = f"./src/{prob['category']}/{file_name}"
-        companies = ", ".join([f"`{c}`" for c in prob['companies']])
         
-        row = f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob['difficulty']} | {prob['category'].capitalize()} | {companies} |"
-        print(row)
+        # Format the companies
+        companies = ", ".join([f"`{c}`" for c in prob.get('companies', [])])
         
-    print("\n------------------------------------------------------------\n")
+        # Construct the markdown row
+        row = f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
+        readme_content += row
+
+    # 4. ACTUALLY WRITE TO THE README FILE
+    with open('README.md', 'w', encoding='utf-8') as f:
+        f.write(readme_content)
+        
+    print("✅ SUCCESS! README.md has been overwritten with the latest database.")
 
 if __name__ == "__main__":
     main()

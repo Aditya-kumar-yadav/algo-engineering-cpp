@@ -34,3 +34,10 @@ Unlike traditional competitive programming repositories that duplicate code acro
 │   ├── arrays/
 │   └── strings/
 └── CMakeLists.txt        # Master build configuration
+
+# My Custom Enterprise LeetCode Repo
+Welcome to my repository! This is where I put my custom description that the bot will never delete.
+
+## Problem Database
+## Another Section
+This section is also completely safe from the bot!

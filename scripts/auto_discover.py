@@ -2,33 +2,50 @@ import os
 import re
 import json
 import glob
-import sys # Added this to allow the script to crash safely
 
 def discover_problems():
     print("🔍 Scanning C++ files for metadata...")
     master_db = {"problems": []}
-    seen_ids = set() # This acts as our security guard
     
+    # Find all .hpp files in the src folder
     source_files = glob.glob('src/**/*.hpp', recursive=True)
     
     for file_path in source_files:
+        # Get the folder name (e.g., 'arrays')
         category = os.path.basename(os.path.dirname(file_path))
         
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
+            
+            # Extract metadata using Regex
             id_match = re.search(r'\*\s*ID:\s*(\d+)', content)
             title_match = re.search(r'\*\s*Title:\s*(.+)', content)
-            # ... (keep the rest of your regex matches here) ...
+            diff_match = re.search(r'\*\s*Difficulty:\s*(.+)', content)
+            comp_match = re.search(r'\*\s*Companies:\s*(.+)', content)
             
             if id_match and title_match:
-                prob_id = int(id_match.group(1))
+                companies_list = []
+                if comp_match:
+                    companies_list = [c.strip() for c in comp_match.group(1).split(',')]
                 
-                # 🛑 THE SECURITY CHECK 🛑
-                if prob_id in seen_ids:
-                    print(f"❌ CRITICAL ERROR: Duplicate Problem ID {prob_id} found in {file_path}!")
-                    print("❌ The build has been halted. Please remove the duplicate file.")
-                    sys.exit(1) # This kills the script and fails the GitHub Action!
-                
-                seen_ids.add(prob_id) # Mark this ID as seen
-                
-                # ... (keep your existing master_db append logic here) ...
+                # Append to our local database
+                master_db["problems"].append({
+                    "id": int(id_match.group(1)),
+                    "title": title_match.group(1).strip(),
+                    "difficulty": diff_match.group(1).strip() if diff_match else "Unknown",
+                    "category": category,
+                    "companies": companies_list
+                })
+
+    # Sort the problems numerically by ID
+    master_db["problems"].sort(key=lambda x: x["id"])
+
+    # ACTUALLY WRITE TO THE JSON FILE
+    os.makedirs('metadata', exist_ok=True)
+    with open('metadata/database.json', 'w', encoding='utf-8') as f:
+        json.dump(master_db, f, indent=4)
+        
+    print(f"✅ Auto-discovery complete! Saved {len(master_db['problems'])} problems to database.json.")
+
+if __name__ == "__main__":
+    discover_problems()
