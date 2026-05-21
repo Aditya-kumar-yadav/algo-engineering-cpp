@@ -1,12 +1,10 @@
-# 🚀 Enterprise LeetCode Architecture
+# 🚀 Enterprise LeetCode Solutions
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR-USERNAME/Leetcode-Company-wise-Questions/ci.yml?branch=main&label=CI%2FCD%20Pipeline&style=flat-square)](https://github.com/YOUR-USERNAME/Leetcode-Company-wise-Questions/actions)
-[![C++](https://img.shields.io/badge/C++-17-blue.svg?style=flat-square&logo=c%2B%2B)](https://isocpp.org/)
-[![CMake](https://img.shields.io/badge/CMake-Build_System-success?style=flat-square&logo=cmake)](https://cmake.org/)
-[![Google Test](https://img.shields.io/badge/Testing-Google_Test-yellow?style=flat-square)](https://github.com/google/googletest)
+This repository contains highly optimized, production-ready C++ solutions to LeetCode problems.
 
-> **A scalable, production-ready repository mapping Data Structures & Algorithms to top-tier tech companies.**
+## 📊 Problem Database
 
+<<<<<<< HEAD
 This repository is more than just a collection of solved coding problems. It is architected to mirror **enterprise-grade software engineering standards**. By decoupling algorithmic logic from test execution and utilizing an automated Continuous Integration pipeline, this project demonstrates a commitment to clean code, maintainability, and rigorous testing.
 
 ---
@@ -45,3 +43,7 @@ The entire repository is managed by a custom-built CI/CD pipeline that automatic
 *(The Python bot will inject the table here automatically when you push to GitHub!)*
 ---
 *Maintained by an automated GitHub Actions architecture.*
+=======
+| ID | Problem Title | Difficulty | Category | Frequently Asked By |
+| :--- | :--- | :---: | :--- | :--- |
+>>>>>>> d2642e56be01825a750e9291c8919b68c52a930e
