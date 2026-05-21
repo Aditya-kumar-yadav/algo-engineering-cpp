@@ -1,55 +1,70 @@
-5/21/26, 10:45 PM 
+# 🚀 Enterprise LeetCode Architecture
 
-Late-Night Study Essentials Under ₹300 - Google Gemini 
+[![CI/CD Pipeline](https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions/actions/workflows/ci.yml/badge.svg)](https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions/actions)
+[![Language: C++17](https://img.shields.io/badge/Language-C%2B%2B17-blue.svg)](https://isocpp.org/)
+[![Testing: GTest](https://img.shields.io/badge/Testing-Google_Test-green.svg)](https://github.com/google/googletest)
+[![Build: CMake](https://img.shields.io/badge/Build-CMake-orange.svg)](https://cmake.org/)
 
-## Architectural Repository for Enterprise-Grade Algorithmic Implementations 
+**A fully automated, production-grade algorithmic engineering repository.** This project demonstrates software engineering maturity by treating algorithm solutions as production code. It features a custom CI/CD pipeline, Test-Driven Development (TDD), and automated documentation generation.
 
-This document serves as the formal specification and directory for a repository of algorithmic engineering solutions. Said repository transcends a rudimentary compilation of algorithmic exercises; rather, it constitutes a fully automated, production-grade software architecture meticulously designed to emulate the rigorous standards of contemporary enterprise environments. 
+---
 
-All algorithmic implementations herein are codified in highly optimized C++, subjected to stringent verification protocols utilizing Google Test (GTest) frameworks, and governed by a bespoke Continuous Integration and Continuous Deployment (CI/CD) pipeline facilitated via GitHub Actions. 
+## ⏱️ The 5-Second Overview
+* **Language:** Modern C++17 (Focus on memory safety and optimized time/space complexity).
+* **Testing:** 100% test coverage using **Google Test (GTest)** for edge-case verification.
+* **CI/CD:** Automated **GitHub Actions** pipeline compiles code and runs tests on every push.
+* **Build System:** Dynamic **CMake** configuration that automatically links new algorithmic modules.
+* **DevOps:** Custom Python scripts auto-discover new C++ files and regenerate the database architecture.
 
-## Principal Architectural Features 
+---
 
-- Production-Grade Implementations: The repository comprises modern C++17 solutions wherein the optimization of temporal and spatial complexity, the assurance of memory safety, and strict adherence to foundational software engineering principles are systematically prioritized. 
+## 🏗️ System Architecture
 
-- Test-Driven Methodologies: Each discrete algorithmic function is corroborated by an independent Google Test file, thereby endeavoring to ensure absolute reliability and robustness against boundary and edge cases. 
+1. **Code:** Solutions are written in C++ with standardized boilerplate.
+2. **Test:** Every solution is strictly paired with a `_test.cpp` file.
+3. **Push:** Code is pushed to the repository.
+4. **Pipeline:** A cloud Ubuntu runner provisions CMake, builds the binaries, and executes the GTest suite.
+5. **Automation:** If tests pass, a Python script parses the C++ metadata and updates the solution database.
 
-- Automated Integration and Deployment: A cloud-hosted GitHub Actions infrastructure autonomously orchestrates CMake configurations, compiles the entire C++ codebase, and executes the comprehensive test suite upon each discrete code submission. 
+---
 
-- Dynamic Documentation Generation: A proprietary Python script is deployed to dynamically parse metadata embedded within the C++ source files, reconstruct the underlying JSON database, and autonomously inject updates into the primary documentation repository, thereby eliminating the necessity for manual intervention. 
+## 📊 Algorithmic Problem Database
 
-- Corporate Applicability Mapping: Algorithmic challenges are systematically categorized and correlated with leading technology conglomerates historically known to utilize analogous problems during technical evaluations. 
+The comprehensive database of solved algorithmic problems, their corresponding test suites, and corporate applicability mapping (FAANG) is maintained in a dedicated, auto-generated index.
 
-## Protocols for Local Development and Verification 
+👉 **[Click here to view the complete Problem Database (SOLUTIONS.md)](./SOLUTIONS.md)**
 
-For the purpose of local compilation and test execution, a dynamic CMake build system is utilized, which is engineered to autonomously discover and integrate newly instantiated test files. 
+---
 
-Prerequisites: The local computational environment must possess established installations of CMake and a compliant C++ compiler (e.g., g++ or clang). 
+## 🛠️ Local Development & Testing
 
-- # 1. Replicate the repository to the local environment 
+The dynamic CMake build system automatically discovers new test files. 
 
-git clone [https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions.g cd Leetcode-Company-wise-Questions 
+**Prerequisites:** `cmake` and a C++ compiler (`g++` or `clang`).
 
-# 2. Configure the build infrastructure (Initiates automated retrieval of GTest de cmake -B build -S . 
+```bash
+# Clone the repository
+git clone [https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions.git](https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions.git)
+cd Leetcode-Company-wise-Questions
 
-- # 3. Execute the compilation of the C++ codebase cmake --build build 
+# Configure the build system (Downloads GTest automatically)
+cmake -B build -S .
 
-https://gemini.google.com/app/05efc9d0268208ac 
+# Compile the entire C++ codebase
+cmake --build build
 
-5/21/26, 10:45 PM 
+# Run the Google Test suite
+cd build
+ctest --output-on-failure
+```
 
-Late-Night Study Essentials Under ₹300 - Google Gemini 
+---
 
-# 4. Execute the comprehensive test suite cd build ctest --output-on-failure 
+## 🤝 Contributing
 
-## Guidelines for External Contributions 
+We utilize a Python automator to handle all folder creation, C++ boilerplate generation, and CMake linking. Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) guide before submitting a Pull Request to ensure your code complies with our automated pipeline.
 
-A specialized Python automation script is provided to manage the instantiation of directory structures, the generation of requisite C++ boilerplate code, and the formulation of CMake linkages. 
-
-It is strictly mandated that the CONTRIBUTING.md documentation be thoroughly reviewed prior to the submission of any Pull Request, in order to guarantee strict compliance with the established automated pipeline protocols. 
-
-## Algorithmic Problem Database 
-
-The subsequent tabulation is autonomously maintained via the CI/CD pipeline. Manual alterations are strictly prohibited. 
-
-https://gemini.google.com/app/05efc9d0268208ac 
+---
+<p align="center">
+  <i>Engineered by <a href="https://github.com/Aditya-kumar-yadav">Aditya Kumar Yadav</a> • Maintained by automated CI/CD pipelines 🤖</i>
+</p>
