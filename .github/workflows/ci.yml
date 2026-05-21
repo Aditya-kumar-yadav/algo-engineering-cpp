@@ -1,6 +1,5 @@
-name: Enterprise CMake Build & Test
+name: Enterprise CI/CD Pipeline
 
-# Run this on pushes to main AND your v2 branch
 on:
   push:
     branches: [ "main", "v2-enterprise-architecture", "v2" ]
@@ -15,20 +14,33 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Install dependencies (CMake and GCC)
+    # --- 1. C++ ENVIRONMENT SETUP ---
+    - name: Install C++ dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y cmake build-essential
 
+    # --- 2. PYTHON AUTOMATION & GATEKEEPER ---
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run Metadata Auto-Discovery (Security Check)
+      # This acts as your bouncer. If a duplicate ID is found, the script crashes and fails the PR!
+      run: python scripts/auto_discover.py
+
+    - name: Test Documentation Generator
+      # Ensures your README builder script isn't broken
+      run: python scripts/generate_docs.py
+
+    # --- 3. COMPILATION & TESTING ---
     - name: Configure CMake
-      # This generates the build files in a new "build" directory
       run: cmake -B build -S .
 
     - name: Build Codebase
-      # This compiles your C++ code and Google Tests
       run: cmake --build build
 
     - name: Run Google Tests
-      # This executes the tests. If they pass, the badge turns green!
       working-directory: build
       run: ctest --output-on-failure
