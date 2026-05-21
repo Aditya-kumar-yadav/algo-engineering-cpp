@@ -44,3 +44,9 @@ jobs:
     - name: Run Google Tests
       working-directory: build
       run: ctest --output-on-failure
+      # --- 4. AUTO-COMMIT GENERATED FILES ---
+    - name: Commit and Push Auto-Generated Files
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: auto-update database and documentation [skip ci]"
+        file_pattern: metadata/database.json README.md hubs/
