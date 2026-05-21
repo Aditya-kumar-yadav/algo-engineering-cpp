@@ -1,36 +1,28 @@
-# Longest Common Prefix
+# 14. Longest Common Prefix
 
-## 🔗 LeetCode Link
-[https://leetcode.com/problems/longest-common-prefix/](https://leetcode.com/problems/longest-common-prefix/)
+## Problem Statement
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string `""`.
 
-## 📝 Description
-Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string `""`.
+### Example 1:
+* **Input:** `strs = ["flower","flow","flight"]`
+* **Output:** `"fl"`
 
-## 💡 Examples
+### Example 2:
+* **Input:** `strs = ["dog","racecar","car"]`
+* **Output:** `""`
+* **Explanation:** There is no common prefix among the input strings.
 
-**Example 1:**
-- **Input:** `strs = ["flower","flow","flight"]`
-- **Output:** `"fl"`
+## Constraints
+* `1 <= strs.length <= 200`
+* `0 <= strs[i].length <= 200`
+* `strs[i]` consists of only lowercase English letters.
 
-**Example 2:**
-- **Input:** `strs = ["dog","racecar","car"]`
-- **Output:** `""`
-- **Explanation:** There is no common prefix among the input strings.
+## Solution & Complexity
+* **Time Complexity:** O(N * M * log(N)) - Where `N` is the number of strings and `M` is the maximum length of a string, due to sorting.
+* **Space Complexity:** O(1) or O(M) depending on the sorting algorithm overhead used by the compiler.
 
-## ⚙️ Constraints
-- `1 <= strs.length <= 200`
-- `0 <= strs[i].length <= 200`
-- `strs[i]` consists of only lowercase English letters.
-
-## ⏱️ Complexity
-| Metric | Complexity |
-| :--- | :--- |
-| **Time** | O(S) where S is the sum of all characters in all strings |
-| **Space** | O(1) |
-
-## 💡 Notes
-- Horizontal scanning is the most space-efficient approach.
-- Start with the first string as the prefix and compare it character-by-character with subsequent strings, reducing the prefix length whenever a mismatch occurs.
-
----
-*Status: [Verified by CI/CD Pipeline ✅]*
+## How to Test Locally
+1. **Compile the code:**
+   ```bash
+   g++ solution.cpp -o solution
