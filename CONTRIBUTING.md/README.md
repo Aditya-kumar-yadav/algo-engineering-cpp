@@ -29,10 +29,13 @@ We have built a Python automator that handles all boilerplate, folder creation, 
 ### Method 2: The Manual Way
 If you prefer to create the files manually, you MUST adhere strictly to the following rules so our cloud pipeline can find your code:
 
+### Method 2: The Manual Way
+If you prefer to create the files manually, you MUST adhere strictly to the following rules so our cloud pipeline can find your code:
+
 #### 1. Write the Code & Add Metadata
 * Navigate to `src/` and find (or create) the appropriate topic folder (e.g., `src/arrays/`).
 * Create a `.hpp` file using the format: `[ID]_[Problem_Name].hpp` (e.g., `0001_two_sum.hpp`).
-* You **MUST** include this exact comment block at the very top of your `.hpp` file:
+* You **MUST** include this exact comment block at the very top of your `.hpp` file, immediately followed by your class logic:
 
 ```cpp
 /*
@@ -41,8 +44,12 @@ If you prefer to create the files manually, you MUST adhere strictly to the foll
  * Difficulty: Easy
  * Companies: Amazon, Microsoft
  */
-```
 
+class Solution {
+public:
+    // main code here
+};
+```
 #### 2. Write the Test (Mandatory Naming Convention)
 * We use **Google Test (GTest)**. Code without tests will not be accepted.
 * Navigate to the `tests/` directory and match the topic folder.
