@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "arrays/0121_best_time_to_buy_and_sell_stock.hpp"
+#include "arrays/0002_best_time_to_buy_and_sell_stock.hpp"
 
 TEST(BestTimeToBuyAndSellStockTest, HandlesStandardCase) {
     Solution sol;
