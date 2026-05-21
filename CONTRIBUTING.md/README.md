@@ -63,10 +63,12 @@ public:
 ## ✅ Verify Locally (Optional)
 To ensure your code won't break the pipeline, you can run our checks locally before pushing:
 
-* **Run Tests:** ```bash
+* **Run Tests:**
+ ```bash
   cmake -B build -S . && cmake --build build && cd build && ctest
   ```
-* **Check Metadata:** ```bash
+* **Check Metadata:** 
+```bash
   python scripts/auto_discover.py
   ```
 
