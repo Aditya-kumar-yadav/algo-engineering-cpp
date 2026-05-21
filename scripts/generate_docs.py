@@ -1,10 +1,10 @@
 import json
 import os
+import re
 
 def main():
-    print("📝 Generating README.md...")
+    print("📝 Updating README.md...")
     
-    # 1. Load the database
     try:
         with open('metadata/database.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -12,38 +12,41 @@ def main():
         print("❌ Error: database.json not found. Run auto_discover.py first.")
         return
 
-    # 2. Build the top of the README
-    readme_content = "# 🚀 Enterprise LeetCode Solutions\n\n"
-    readme_content += "This repository contains highly optimized, production-ready C++ solutions to LeetCode problems.\n\n"
-    readme_content += "## 📊 Problem Database\n\n"
-    readme_content += "| ID | Problem Title | Difficulty | Category | Frequently Asked By |\n"
-    readme_content += "| :--- | :--- | :---: | :--- | :--- |\n"
+    table_content = "\n| ID | Problem Title | Difficulty | Category | Frequently Asked By |\n"
+    table_content += "| :--- | :--- | :---: | :--- | :--- |\n"
     
-    # 3. Build the table rows
     for prob in data['problems']:
-        # Format ID to always be 4 digits (e.g., 0121)
         prob_id = f"{prob['id']:04d}"
-        
-        # Determine the emoji
         diff = prob.get('difficulty', 'Unknown').lower()
         emoji = "🟢" if diff == "easy" else "🟡" if diff == "medium" else "🔴" if diff == "hard" else "⚪"
-        
-        # Build the link directly to the C++ code
         file_name = f"{prob_id}_{prob['title'].lower().replace(' ', '_')}.hpp"
         link = f"./src/{prob['category']}/{file_name}"
-        
-        # Format the companies
         companies = ", ".join([f"`{c}`" for c in prob.get('companies', [])])
         
-        # Construct the markdown row
-        row = f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
-        readme_content += row
+        table_content += f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
 
-    # 4. ACTUALLY WRITE TO THE README FILE
-    with open('README.md', 'w', encoding='utf-8') as f:
-        f.write(readme_content)
+    try:
+        with open('README.md', 'r', encoding='utf-8') as f:
+            readme_text = f.read()
+    except FileNotFoundError:
+        print("❌ Error: README.md not found in the root directory.")
+        return
         
-    print("✅ SUCCESS! README.md has been overwritten with the latest database.")
+    marker_start = r""
+    marker_end = r""
+    
+    pattern = re.compile(rf"({marker_start}).*?({marker_end})", re.DOTALL)
+    
+    if not pattern.search(readme_text):
+        print("❌ Error: Could not find the injection markers in README.md.")
+        return
+        
+    new_readme_text = pattern.sub(rf"\1{table_content}\2", readme_text)
+    
+    with open('README.md', 'w', encoding='utf-8') as f:
+        f.write(new_readme_text)
+        
+    print("✅ SUCCESS! README.md table has been updated without touching your description.")
 
 if __name__ == "__main__":
     main()

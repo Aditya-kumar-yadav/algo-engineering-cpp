@@ -2,50 +2,59 @@
 
 First off, thank you for considering contributing! We aim to build the cleanest, most scalable LeetCode repository on GitHub. 
 
-To maintain our enterprise-grade architecture, we use a fully automated CI/CD pipeline. **You only need to write code—our scripts handle the database and documentation.**
+To maintain our enterprise-grade architecture, we use a fully automated CI/CD pipeline. **You only need to write code—our scripts handle the database, build system, and documentation.**
 
-## 🛑 Important: Do NOT Edit JSON Files
-Our `metadata/database.json` and `README.md` are automatically generated from the C++ source code. **Any manual edits to these files will be overwritten and rejected.**
+## 🛑 Important: Do NOT Edit JSON Files or CMakeLists
+* Our `metadata/database.json` and `README.md` are automatically generated. **Manual edits will be overwritten.**
+* Our build system is completely dynamic. **Do NOT edit `CMakeLists.txt` to add your tests.**
 
 ---
 
-## 🛠️ Step-by-Step Contribution Guide
+## 🛠️ How to Contribute
 
-### 1. Write the Code & Add Metadata
-* Navigate to the `src/` directory and find the appropriate topic folder (e.g., `src/arrays/`).
-* Create a `.hpp` file using the standard format: `[ID]_[Problem_Name].hpp` (e.g., `0001_two_sum.hpp`).
-* **Crucial Step:** You MUST include this exact comment block at the very top of your `.hpp` file. Our pipeline uses this to build the database:
+### Method 1: The Automated Way (Recommended)
+We have built a Python automator that handles all boilerplate, folder creation, and linking for you.
+
+1. Open your terminal in the root directory.
+2. Run the automator script with your problem details:
+   ```bash
+   python scripts/start.py --id [PROBLEM_ID] --topic [CATEGORY] --title "[PROBLEM TITLE]" --diff [Easy/Medium/Hard]
+   ```
+   *Example: `python scripts/start.py --id 20 --topic stacks --title "Valid Parentheses" --diff Easy`*
+3. The script will instantly generate your `.hpp` file and your `_test.cpp` file in the correct folders. 
+4. Just write your logic, write your test cases, and push!
+
+---
+
+### Method 2: The Manual Way
+If you prefer to create the files manually, you MUST adhere strictly to the following rules so our cloud pipeline can find your code:
+
+#### 1. Write the Code & Add Metadata
+* Navigate to `src/` and find (or create) the appropriate topic folder (e.g., `src/arrays/`).
+* Create a `.hpp` file using the format: `[ID]_[Problem_Name].hpp` (e.g., `0001_two_sum.hpp`).
+* You **MUST** include this exact comment block at the very top of your `.hpp` file:
 
 ```cpp
 /*
  * ID: 1
  * Title: Two Sum
  * Difficulty: Easy
- * Companies: Amazon, Microsoft, Adobe, Apple
+ * Companies: Amazon, Microsoft
  */
-
-#pragma once
-#include <vector>
-using namespace std;
-
-class Solution {
-    // ... pure algorithm logic here ...
-};
 ```
-*(Note: Provide **only** the `class Solution` logic. Do not include `main()` functions or fast I/O boilerplate).*
 
-### 2. Write the Test (Mandatory)
+#### 2. Write the Test (Mandatory Naming Convention)
 * We use **Google Test (GTest)**. Code without tests will not be accepted.
-* Navigate to the `tests/` directory and create your test file (e.g., `tests/arrays/two_sum_test.cpp`).
-* Add at least 2-3 edge cases. 
-* Register your new test in the root `CMakeLists.txt` file.
+* Navigate to the `tests/` directory and match the topic folder.
+* ⚠️ **CRITICAL:** Your test file MUST end with `_test.cpp` (e.g., `tests/arrays/two_sum_test.cpp`). 
+* If your file does not end in `_test.cpp`, our dynamic CMake build system will ignore it, and your Pull Request will fail.
 
-### 3. Verify Locally (Optional)
-To ensure your code won't break the pipeline, you can run our automation scripts locally:
-1. `python scripts/auto_discover.py` (Scans your files and builds the JSON database)
-2. `python scripts/generate_docs.py` (Updates the README tables)
+---
 
-### 4. Submit your Pull Request
-* Push your branch to GitHub and open a Pull Request.
-* Our CI/CD pipeline will automatically run your tests and update the documentation. 
-* **If the GitHub Actions build fails (e.g., your code does not compile or tests fail), your PR cannot be merged.** Please check the action logs and fix any errors!
+### Verify Locally (Optional)
+To ensure your code won't break the pipeline, you can run our checks locally:
+* **Run Tests:** `cmake -B build -S . && cmake --build build && cd build && ctest`
+* **Check Metadata:** `python scripts/auto_discover.py`
+
+### Submit your Pull Request
+Push your branch to GitHub and open a Pull Request. Our CI/CD pipeline will automatically run your tests and update the documentation!

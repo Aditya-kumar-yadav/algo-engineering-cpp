@@ -21,4 +21,24 @@ enable_testing()
 # Include your source files so the tests can find them
 include_directories(src)
 
-# --- Add Your Test Files Here ---
+# --- AUTO-DISCOVER AND REGISTER ALL TESTS ---
+
+# 1. Search the tests/ folder for any file ending in "_test.cpp"
+file(GLOB_RECURSE TEST_SOURCES "tests/*_test.cpp")
+
+# 2. Loop through every test file it found
+foreach(TEST_FILE ${TEST_SOURCES})
+    
+    # Extract just the name of the file (e.g., "two_sum_test" from "tests/arrays/two_sum_test.cpp")
+    get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+    
+    # Create the executable for this specific test
+    add_executable(${TEST_NAME} ${TEST_FILE})
+    
+    # Link Google Test to it
+    target_link_libraries(${TEST_NAME} gtest_main)
+    
+    # Register it so `ctest` knows it exists
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+    
+endforeach()
