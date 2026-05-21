@@ -1,0 +1,114 @@
+#,Title,Difficulty,Max Frequency Score,Acceptance Rate,Topics,LeetCode Link
+1,Two Sum,EASY,100.0,0.5577699165086937,"Array, Hash Table",Solve Problem
+2,Split the Array,EASY,80.8,0.5922734052667847,"Array, Hash Table, Counting",Solve Problem
+3,Longest Common Prefix,EASY,80.1,0.4548305774598658,"String, Trie",Solve Problem
+4,Best Time to Buy and Sell Stock,EASY,78.7,0.552596541931788,"Array, Dynamic Programming",Solve Problem
+5,Majority Element,EASY,78.7,0.6574028018936169,"Array, Hash Table, Divide and Conquer, Sorting, Counting",Solve Problem
+6,Merge Sorted Array,EASY,72.7,0.5291952521829845,"Array, Two Pointers, Sorting",Solve Problem
+7,Climbing Stairs,EASY,69.9,0.5354071840932856,"Math, Dynamic Programming, Memoization",Solve Problem
+8,Palindrome Number,EASY,69.6,0.5922454353509216,Math,Solve Problem
+9,Valid Parentheses,EASY,67.6,0.4232282382087554,"String, Stack",Solve Problem
+10,Remove Duplicates from Sorted Array,EASY,64.4,0.6035551873801481,"Array, Two Pointers",Solve Problem
+11,Remove Element,EASY,64.4,0.600316358048653,"Array, Two Pointers",Solve Problem
+12,Roman to Integer,EASY,62.7,0.6486627884371093,"Hash Table, Math, String",Solve Problem
+13,Merge Two Sorted Lists,EASY,61.7,0.6684088801523707,"Linked List, Recursion",Solve Problem
+14,Plus One,EASY,57.5,0.4754763031468927,"Array, Math",Solve Problem
+15,Sqrt(x),EASY,51.7,0.4037181467115527,"Math, Binary Search",Solve Problem
+16,Search Insert Position,EASY,46.1,0.4901243579627091,"Array, Binary Search",Solve Problem
+17,Find the Index of the First Occurrence in a String,EASY,45.2,0.4497159539277782,"Two Pointers, String, String Matching",Solve Problem
+18,Length of Last Word,EASY,43.8,0.5631924456525931,String,Solve Problem
+19,Symmetric Tree,EASY,38.3,0.5927867908424697,"Tree, Depth-First Search, Breadth-First Search, Binary Tree",Solve Problem
+20,Binary Tree Inorder Traversal,EASY,38.3,0.7858399541084903,"Stack, Tree, Depth-First Search, Binary Tree",Solve Problem
+21,Balanced Binary Tree,EASY,34.8,0.5534206156043029,"Tree, Depth-First Search, Binary Tree",Solve Problem
+22,Same Tree,EASY,34.8,0.6512685923910883,"Tree, Depth-First Search, Breadth-First Search, Binary Tree",Solve Problem
+23,Add Binary,EASY,34.8,0.5567702663015909,"Math, String, Bit Manipulation, Simulation",Solve Problem
+24,Remove Duplicates from Sorted List,EASY,30.6,0.5487081617461452,Linked List,Solve Problem
+25,Maximum Depth of Binary Tree,EASY,30.6,0.7713815272678225,"Tree, Depth-First Search, Breadth-First Search, Binary Tree",Solve Problem
+26,Path Sum,EASY,25.2,0.5300475989532051,"Tree, Depth-First Search, Breadth-First Search, Binary Tree",Solve Problem
+27,Convert Sorted Array to Binary Search Tree,EASY,18.2,0.7407934506434607,"Array, Divide and Conquer, Tree, Binary Search Tree, Binary Tree",Solve Problem
+28,Minimum Depth of Binary Tree,EASY,18.2,0.5066668022955421,"Tree, Depth-First Search, Breadth-First Search, Binary Tree",Solve Problem
+29,Top K Frequent Words,MEDIUM,100.0,0.592771260185311,"Array, Hash Table, String, Trie, Sorting, Heap (Priority Queue), Bucket Sort, Counting",Solve Problem
+30,Top K Frequent Elements,MEDIUM,92.0,0.6456596965737327,"Array, Hash Table, Divide and Conquer, Sorting, Heap (Priority Queue), Bucket Sort, Counting, Quickselect",Solve Problem
+31,Maximum Product Subarray,MEDIUM,92.0,0.3494161479461919,"Array, Dynamic Programming",Solve Problem
+32,LRU Cache,MEDIUM,91.1,0.4521456257537392,"Hash Table, Linked List, Design, Doubly-Linked List",Solve Problem
+33,Longest Repeating Character Replacement,MEDIUM,80.8,0.5721163769892559,"Hash Table, String, Sliding Window",Solve Problem
+34,Integer to Roman,MEDIUM,78.7,0.6861925885666443,"Hash Table, Math, String",Solve Problem
+35,Rotting Oranges,MEDIUM,78.7,0.566184675573941,"Array, Breadth-First Search, Matrix",Solve Problem
+36,Product of Array Except Self,MEDIUM,78.7,0.6777995792305304,"Array, Prefix Sum",Solve Problem
+37,Decode Ways,MEDIUM,78.7,0.3653098286175434,"String, Dynamic Programming",Solve Problem
+38,3Sum,MEDIUM,78.6,0.3707094094916058,"Array, Two Pointers, Sorting",Solve Problem
+39,Longest Substring Without Repeating Characters,MEDIUM,75.7,0.3693616958685081,"Hash Table, String, Sliding Window",Solve Problem
+40,Reverse Integer,MEDIUM,74.8,0.3030892269554824,Math,Solve Problem
+41,Add Two Numbers,MEDIUM,70.5,0.4622507291808296,"Linked List, Math, Recursion",Solve Problem
+42,Group Anagrams,MEDIUM,69.0,0.7092883319407988,"Array, Hash Table, String, Sorting",Solve Problem
+43,Container With Most Water,MEDIUM,65.3,0.5778283165036205,"Array, Two Pointers, Greedy",Solve Problem
+44,Longest Palindromic Substring,MEDIUM,64.4,0.358461107628481,"Two Pointers, String, Dynamic Programming",Solve Problem
+45,Next Permutation,MEDIUM,64.4,0.4305775328017951,"Array, Two Pointers",Solve Problem
+46,Spiral Matrix,MEDIUM,62.7,0.5393976057408939,"Array, Matrix, Simulation",Solve Problem
+47,Set Matrix Zeroes,MEDIUM,60.7,0.6070884864800216,"Array, Hash Table, Matrix",Solve Problem
+48,Jump Game,MEDIUM,58.5,0.3947919786729132,"Array, Dynamic Programming, Greedy",Solve Problem
+49,Generate Parentheses,MEDIUM,57.3,0.7713286717803378,"String, Dynamic Programming, Backtracking",Solve Problem
+50,Letter Combinations of a Phone Number,MEDIUM,56.1,0.6385755061179695,"Hash Table, String, Backtracking",Solve Problem
+51,Rotate Image,MEDIUM,56.1,0.7790165261990751,"Array, Math, Matrix",Solve Problem
+52,Merge Intervals,MEDIUM,53.3,0.4939526038842514,"Array, Sorting",Solve Problem
+53,Find First and Last Position of Element in Sorted Array,MEDIUM,53.3,0.4682875947454554,"Array, Binary Search",Solve Problem
+54,Permutations,MEDIUM,53.3,0.8066012553007272,"Array, Backtracking",Solve Problem
+55,Remove Duplicates from Sorted Array II,MEDIUM,51.7,0.6290186962409604,"Array, Two Pointers",Solve Problem
+56,Jump Game II,MEDIUM,50.7,0.415032966531176,"Array, Dynamic Programming, Greedy",Solve Problem
+57,Unique Paths,MEDIUM,50.0,0.6577287347956182,"Math, Dynamic Programming, Combinatorics",Solve Problem
+58,Combination Sum II,MEDIUM,50.0,0.5767453180420465,"Array, Backtracking",Solve Problem
+59,Sort Colors,MEDIUM,50.0,0.675831142046278,"Array, Two Pointers, Sorting",Solve Problem
+60,Maximum Subarray,MEDIUM,50.0,0.5209977640581438,"Array, Divide and Conquer, Dynamic Programming",Solve Problem
+61,Valid Sudoku,MEDIUM,50.0,0.6227675793740958,"Array, Hash Table, Matrix",Solve Problem
+62,"Pow(x, n)",MEDIUM,47.2,0.370231906887774,"Math, Recursion",Solve Problem
+63,Search in Rotated Sorted Array,MEDIUM,47.2,0.4283721632586699,"Array, Binary Search",Solve Problem
+64,Construct Binary Tree from Preorder and Inorder Traversal,MEDIUM,46.1,0.6683774773521286,"Array, Hash Table, Divide and Conquer, Tree, Binary Tree",Solve Problem
+65,Divide Two Integers,MEDIUM,46.1,0.1839697508503305,"Math, Bit Manipulation",Solve Problem
+66,Subsets,MEDIUM,46.1,0.8087956878508169,"Array, Backtracking, Bit Manipulation",Solve Problem
+67,Swap Nodes in Pairs,MEDIUM,43.8,0.6720136828647639,"Linked List, Recursion",Solve Problem
+68,Reverse Linked List II,MEDIUM,43.8,0.495917143135072,Linked List,Solve Problem
+69,String to Integer (atoi),MEDIUM,42.9,0.1922941979541227,String,Solve Problem
+70,Binary Tree Zigzag Level Order Traversal,MEDIUM,42.9,0.6168283891746636,"Tree, Breadth-First Search, Binary Tree",Solve Problem
+71,4Sum,MEDIUM,41.2,0.3821900891354193,"Array, Two Pointers, Sorting",Solve Problem
+72,3Sum Closest,MEDIUM,41.2,0.468869600214817,"Array, Two Pointers, Sorting",Solve Problem
+73,Zigzag Conversion,MEDIUM,41.2,0.5160678115303926,String,Solve Problem
+74,Partition List,MEDIUM,40.3,0.5898677373641946,"Linked List, Two Pointers",Solve Problem
+75,Remove Nth Node From End of List,MEDIUM,40.3,0.4896105904273307,"Linked List, Two Pointers",Solve Problem
+76,Insert Interval,MEDIUM,38.3,0.4347364546603863,Array,Solve Problem
+77,Word Search,MEDIUM,34.8,0.4526693801123823,"Array, String, Backtracking, Depth-First Search, Matrix",Solve Problem
+78,Search a 2D Matrix,MEDIUM,33.9,0.5228958306958686,"Array, Binary Search, Matrix",Solve Problem
+79,Combinations,MEDIUM,30.6,0.728964998447839,Backtracking,Solve Problem
+80,Spiral Matrix II,MEDIUM,30.6,0.734312719680276,"Array, Matrix, Simulation",Solve Problem
+81,Search in Rotated Sorted Array II,MEDIUM,30.6,0.3887964488253302,"Array, Binary Search",Solve Problem
+82,Rotate List,MEDIUM,30.6,0.3994476663735721,"Linked List, Two Pointers",Solve Problem
+83,Validate Binary Search Tree,MEDIUM,30.6,0.3438040355108531,"Tree, Depth-First Search, Binary Search Tree, Binary Tree",Solve Problem
+84,Edit Distance,MEDIUM,30.6,0.5878978269295445,"String, Dynamic Programming",Solve Problem
+85,Unique Paths II,MEDIUM,30.6,0.4315438505851779,"Array, Dynamic Programming, Matrix",Solve Problem
+86,Simplify Path,MEDIUM,25.2,0.4785434600375143,"String, Stack",Solve Problem
+87,Count and Say,MEDIUM,25.2,0.6050656775612677,String,Solve Problem
+88,Restore IP Addresses,MEDIUM,24.4,0.531583393083398,"String, Backtracking",Solve Problem
+89,Remove Duplicates from Sorted List II,MEDIUM,24.4,0.4989080936318432,"Linked List, Two Pointers",Solve Problem
+90,Permutations II,MEDIUM,24.4,0.615917727605333,"Array, Backtracking, Sorting",Solve Problem
+91,Subsets II,MEDIUM,18.2,0.595072748658621,"Array, Backtracking, Bit Manipulation",Solve Problem
+92,Unique Binary Search Trees,MEDIUM,18.2,0.6244520536210353,"Math, Dynamic Programming, Tree, Binary Search Tree, Binary Tree",Solve Problem
+93,Multiply Strings,MEDIUM,18.2,0.4228943914738829,"Math, String, Simulation",Solve Problem
+94,Construct Binary Tree from Inorder and Postorder Traversal,MEDIUM,18.2,0.6608200104533679,"Array, Hash Table, Divide and Conquer, Tree, Binary Tree",Solve Problem
+95,Combination Sum,MEDIUM,18.2,0.7467468656021409,"Array, Backtracking",Solve Problem
+96,Binary Tree Level Order Traversal,MEDIUM,17.4,0.7059657203049214,"Tree, Breadth-First Search, Binary Tree",Solve Problem
+97,Longest Increasing Path in a Matrix,HARD,91.1,0.5534762586302827,"Array, Dynamic Programming, Depth-First Search, Breadth-First Search, Graph, Topological Sort, Memoization, Matrix",Solve Problem
+98,Word Ladder,HARD,78.7,0.4281182673737007,"Hash Table, String, Breadth-First Search",Solve Problem
+99,Minimum Window Substring,HARD,78.7,0.4535074763823223,"Hash Table, String, Sliding Window",Solve Problem
+100,Median of Two Sorted Arrays,HARD,77.0,0.4381460348224133,"Array, Binary Search, Divide and Conquer",Solve Problem
+101,Trapping Rain Water,HARD,73.2,0.6510194577693873,"Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack",Solve Problem
+102,Merge k Sorted Lists,HARD,50.0,0.5677420052593406,"Linked List, Divide and Conquer, Heap (Priority Queue), Merge Sort",Solve Problem
+103,First Missing Positive,HARD,49.0,0.4108465766394882,"Array, Hash Table",Solve Problem
+104,Largest Rectangle in Histogram,HARD,43.8,0.4737769446459488,"Array, Stack, Monotonic Stack",Solve Problem
+105,Reverse Nodes in k-Group,HARD,43.8,0.630436472551844,"Linked List, Recursion",Solve Problem
+106,Wildcard Matching,HARD,41.2,0.2989832621421184,"String, Dynamic Programming, Greedy, Recursion",Solve Problem
+107,Sudoku Solver,HARD,38.3,0.6390866531877745,"Array, Hash Table, Backtracking, Matrix",Solve Problem
+108,Text Justification,HARD,34.8,0.4814993566410409,"Array, String, Simulation",Solve Problem
+109,Longest Valid Parentheses,HARD,34.8,0.3631311456770452,"String, Dynamic Programming, Stack",Solve Problem
+110,Substring with Concatenation of All Words,HARD,30.6,0.3299749970274807,"Hash Table, String, Sliding Window",Solve Problem
+111,Permutation Sequence,HARD,30.6,0.4994329004732563,"Math, Recursion",Solve Problem
+112,N-Queens,HARD,25.2,0.7281704967757537,"Array, Backtracking",Solve Problem
+113,Maximal Rectangle,HARD,18.2,0.5370845822665518,"Array, Dynamic Programming, Stack, Matrix, Monotonic Stack",Solve Problem
