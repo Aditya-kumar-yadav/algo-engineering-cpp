@@ -1,55 +1,34 @@
-name: Automated Testing
+name: Enterprise CMake Build & Test
 
+# Run this on pushes to main AND your v2 branch
 on:
   push:
-    branches:
-      - main
-    # This ensures the pipeline only triggers if you change code inside src/
-    paths:
-      - 'src/**'
-  workflow_dispatch:
+    branches: [ "main", "v2-enterprise-architecture", "v2" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
 
-      - name: Compile and Test
-        run: |
-          # Recursively find every solution.cpp in the src/ folder
-          find src -name "solution.cpp" | while read sol; do
-            dir=$(dirname "$sol")
-            input="$dir/tests.txt"
-            expected="$dir/expected.txt"
-            
-            # Only test if both input and expected files exist
-            if [ -f "$input" ] && [ -f "$expected" ]; then
-              echo "-----------------------------------"
-              echo "Testing: $sol"
-              
-              # Compile with O2 optimization
-              if g++ -O2 "$sol" -o solution; then
-                # Run the solution and save output
-                ./solution < "$input" > actual_output.txt
-                
-                # Compare against expected output
-                if diff -w -B actual_output.txt "$expected" > /dev/null; then
-                  echo "SUCCESS: $sol passed."
-                else
-                  echo "ERROR: Output mismatch for $sol"
-                  echo "--- Expected ---"
-                  cat "$expected"
-                  echo "--- Actual ---"
-                  cat actual_output.txt
-                  exit 1
-                fi
-              else
-                echo "ERROR: Compilation failed for $sol"
-                exit 1
-              fi
-            else
-              echo "SKIP: Missing tests.txt or expected.txt in $dir, skipping $sol"
-            fi
-          done
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies (CMake and GCC)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential
+
+    - name: Configure CMake
+      # This generates the build files in a new "build" directory
+      run: cmake -B build -S .
+
+    - name: Build Codebase
+      # This compiles your C++ code and Google Tests
+      run: cmake --build build
+
+    - name: Run Google Tests
+      # This executes the tests. If they pass, the badge turns green!
+      working-directory: build
+      run: ctest --output-on-failure
