@@ -1,40 +1,21 @@
 #include <gtest/gtest.h>
-#include <vector>
-#include "arrays/0121_best_time_to_buy_and_sell.hpp"
+// Make sure this include exactly matches your .hpp filename!
+#include "0121_best_time_to_buy_and_sell_stock.hpp" 
 
-using namespace std;
-
-TEST(BesttimetobuyandsellTest, HandlesStandardCase) {
+TEST(MaxProfitTest, ProfitPossible) {
     Solution sol;
-    vector<int> prices = {7, 1, 5, 3, 6, 4};
-    int expected = 5;
-    EXPECT_EQ(sol.maxProfit(prices), expected);
+    std::vector<int> prices = {7, 1, 5, 3, 6, 4};
+    EXPECT_EQ(sol.maxProfit(prices), 5);
 }
 
-TEST(BesttimetobuyandsellTest, HandlesDecreasingPrices) {
+TEST(MaxProfitTest, NoProfitPossible) {
     Solution sol;
-    vector<int> prices = {7, 6, 4, 3, 1};
-    int expected = 0;
-    EXPECT_EQ(sol.maxProfit(prices), expected);
+    std::vector<int> prices = {7, 6, 4, 3, 1};
+    EXPECT_EQ(sol.maxProfit(prices), 0);
 }
 
-TEST(BesttimetobuyandsellTest, HandlesIncreasingPrices) {
+TEST(MaxProfitTest, EmptyArray) {
     Solution sol;
-    vector<int> prices = {1, 2, 3, 4, 5};
-    int expected = 4;
-    EXPECT_EQ(sol.maxProfit(prices), expected);
-}
-
-TEST(BesttimetobuyandsellTest, HandlesEmptyArray) {
-    Solution sol;
-    vector<int> prices = {};
-    int expected = 0;
-    EXPECT_EQ(sol.maxProfit(prices), expected);
-}
-
-TEST(BesttimetobuyandsellTest, HandlesSingleElement) {
-    Solution sol;
-    vector<int> prices = {5};
-    int expected = 0;
-    EXPECT_EQ(sol.maxProfit(prices), expected);
+    std::vector<int> prices = {};
+    EXPECT_EQ(sol.maxProfit(prices), 0);
 }

@@ -1,30 +1,29 @@
-/*
- * ID: 1
- * Title: Two Sum
- * Difficulty: Easy
- * Companies: Amazon, Google, Apple, Adobe 
+/* * ID: 1 
+ * Title: Two Sum 
+ * Difficulty: Easy 
+ * Companies: Amazon, Microsoft , Google, Facebook, Apple, Adobe, Oracle, Uber, Airbnb, Twitter, LinkedIn, Salesforce, Dropbox, eBay, PayPal, Intel, IBM, Cisco, Netflix
  */
-
 #pragma once
 #include <vector>
 #include <unordered_map>
 
-using namespace std;
-
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> map;
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
+        std::unordered_map<int, int> numMap;
         
-        for (int i = 0; i < nums.size(); i++) {
+        // Fix 1: Use std::size_t instead of int to match nums.size()
+        for (std::size_t i = 0; i < nums.size(); ++i) {
             int complement = target - nums[i];
             
-            if (map.count(complement)) {
-                return {map[complement], i};
+            if (numMap.count(complement)) {
+                // Fix 2: Cast the size_t back to int because the return type demands vector<int>
+                return {numMap[complement], static_cast<int>(i)};
             }
-            map[nums[i]] = i;
+            numMap[nums[i]] = static_cast<int>(i);
         }
         
-        return {};
+        // Fix 3: Provide a default return to prevent "control reaches end of non-void function"
+        return {}; 
     }
 };
