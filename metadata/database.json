@@ -11,6 +11,15 @@
                 "Apple",
                 "Adobe"
             ]
+        },
+        {
+            "id": 121,
+            "title": "best time to buy and sell",
+            "difficulty": "Easy",
+            "category": "arrays",
+            "companies": [
+                "*/"
+            ]
         }
     ]
 }
