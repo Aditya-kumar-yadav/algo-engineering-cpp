@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-// Make sure this include exactly matches your .hpp filename!
 #include "arrays/0121_best_time_to_buy_and_sell.hpp" 
 
 TEST(MaxProfitTest, ProfitPossible) {
