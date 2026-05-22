@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "0001_two_sum.hpp"
+#include "arrays/0001_two_sum.hpp"
 
 TEST(TwoSumTest, StandardCase) {
     Solution sol;

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 // Make sure this include exactly matches your .hpp filename!
-#include "0121_best_time_to_buy_and_sell_stock.hpp" 
+#include "arrays/0121_best_time_to_buy_and_sell_stock.hpp" 
 
 TEST(MaxProfitTest, ProfitPossible) {
     Solution sol;
