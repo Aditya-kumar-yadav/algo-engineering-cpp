@@ -5,9 +5,15 @@
  * Companies: 
  */
 
+ #pragma once
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
 class Solution {
 public:
-    int maxProfit(const vector<int>& prices) {
+    int maxProfit(vector<int>& prices) {
         if (prices.empty()) {
             return 0;
         }
