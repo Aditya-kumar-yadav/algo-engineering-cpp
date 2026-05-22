@@ -2,9 +2,9 @@ import json
 import os
 
 def main():
-    print("📝 Updating src/README.md safely...")
+    print("📝 Generating a professional README table...")
     
-    # 1. Load the database
+    # 1. Load the database safely
     try:
         with open('metadata/database.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -12,24 +12,39 @@ def main():
         print("❌ Error: database.json not found. Run auto_discover.py first.")
         return
 
-    # 2. Build the table content
-    table_content = "\n| ID | Problem Title | Difficulty | Category | Frequently Asked By |\n"
-    table_content += "| :--- | :--- | :---: | :--- | :--- |\n"
+    # 2. Build the professional table content using ONLY json fields
+    table_content = "\n| # | Problem Title | Difficulty | Category | LeetCode | Solution |\n"
+    table_content += "| :---: | :--- | :---: | :--- | :---: | :---: |\n"
     
-    for prob in data['problems']:
+    for prob in data.get('problems', []):
         prob_id = f"{prob['id']:04d}"
+        title = prob['title']
+        category = prob.get('category', 'Unknown')
+        
+        # 🎨 Professional Difficulty Formatting
         diff = prob.get('difficulty', 'Unknown').lower()
-        emoji = "🟢" if diff == "easy" else "🟡" if diff == "medium" else "🔴" if diff == "hard" else "⚪"
-        file_name = f"{prob_id}_{prob['title'].lower().replace(' ', '_')}.hpp"
+        if diff == "easy":
+            diff_html = "🟩 Easy"
+        elif diff == "medium":
+            diff_html = "🟨 Medium"
+        elif diff == "hard":
+            diff_html = "🟥 Hard"
+        else:
+            diff_html = "⬜ Unknown"
+            
+        # 💻 Local Solution Link
+        safe_title = title.lower().replace(' ', '_').replace('-', '_')
+        file_name = f"{prob_id}_{safe_title}.hpp"
+        local_link = f"./{category}/{file_name}"
         
-        # LINK CHANGE: Since README is in src/, we drop the 'src/' from the path
-        link = f"./{prob['category']}/{file_name}"
+        # 🔗 Auto-generate LeetCode URL based on problem title
+        lc_slug = title.lower().replace(' ', '-').replace("'", "")
+        lc_link = f"https://leetcode.com/problems/{lc_slug}/"
         
-        companies = ", ".join([f"`{c}`" for c in prob.get('companies', [])])
-        
-        table_content += f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
+        # Assemble the row
+        table_content += f"| **{prob_id}** | {title} | {diff_html} | `{category.capitalize()}` | [🔗 Link]({lc_link}) | [💻 Code]({local_link}) |\n"
 
-    # 3. Read the existing README line-by-line from the src folder
+    # 3. Read the existing README from the src folder
     readme_path = 'src/README.md'
     try:
         with open(readme_path, 'r', encoding='utf-8') as f:
@@ -38,10 +53,9 @@ def main():
         print(f"❌ Error: {readme_path} not found.")
         return
         
-    # 4. Find the exact lines where your markers live
-    # FIX: Added actual marker text so the script knows where to cut
-    start_marker = "<!-- TABLE_START -->"
-    end_marker = "<!-- TABLE_END -->"
+    # 4. Find the injection markers
+    start_marker = ""
+    end_marker = ""
     
     start_idx = -1
     end_idx = -1
@@ -52,23 +66,23 @@ def main():
         elif end_marker in line:
             end_idx = i
             
-    # Safety Check: Did it find both markers in the right order?
+    # Safety Check
     if start_idx == -1 or end_idx == -1 or start_idx >= end_idx:
-        print("❌ Error: Markers missing or incorrectly placed in src/README.md.")
+        print(f"❌ Error: Markers missing or incorrectly placed in {readme_path}.")
         print(f"Ensure both '{start_marker}' and '{end_marker}' are in the file.")
         return
         
-    # 5. Bulletproof Injection: Stitch the top, the new table, and the bottom together
+    # 5. Bulletproof Injection
     top_half = lines[:start_idx + 1]
     bottom_half = lines[end_idx:]
     
     new_readme_lines = top_half + [table_content + "\n"] + bottom_half
     
-    # 6. Write it back safely
+    # 6. Write it back
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.writelines(new_readme_lines)
         
-    print(f"✅ SUCCESS! {readme_path} table has been updated safely.")
+    print(f"✅ SUCCESS! Professional table generated in {readme_path}.")
 
 if __name__ == "__main__":
     main()

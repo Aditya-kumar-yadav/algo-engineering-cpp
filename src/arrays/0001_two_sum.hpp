@@ -2,7 +2,7 @@
  * ID: 1
  * Title: Two Sum
  * Difficulty: Easy
- * Companies: Amazon, Google, Apple, Adobe
+ * Companies: Amazon, Google, Apple, Adobe 
  */
 
 #pragma once

@@ -1,7 +1,7 @@
 /*
  * ID: 121
  * Title: best time to buy and sell
- * Difficulty: Easy
+ * Difficulty: Easy 
  * Companies: 
  */
 
