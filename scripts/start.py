@@ -26,33 +26,23 @@ def main():
     # 2. Generate C++ Header File
     hpp_path = f"{src_dir}/{padded_id}_{safe_title}.hpp"
     hpp_content = f"""/*
- * ID: {args.id}
- * Title: {args.title}
- * Difficulty: {args.diff}
+* ID: {args.id} 
+ * Title: {args.title} 
+ * Difficulty: {args.diff} 
  * Companies: 
  */
 
-#pragma once
-#include <iostream>
-#include <vector>
-#include <string>
-#include <unordered_map>
-
-using namespace std;
-
 class Solution {{
 public:
-    // TODO: Write your function signature here
-    int solve() {{
-        return 0;
-    }}
+    // main code here
 }};
 """
     with open(hpp_path, "w", encoding="utf-8") as f:
         f.write(hpp_content)
 
     # 3. Generate GTest File
-    test_path = f"{test_dir}/{safe_title}_test.cpp"
+    # Added the ID label in front of the test file name
+    test_path = f"{test_dir}/{padded_id}_{safe_title}_test.cpp"
     test_content = f"""#include <gtest/gtest.h>
 #include "{args.topic}/{padded_id}_{safe_title}.hpp"
 
