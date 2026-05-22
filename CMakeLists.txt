@@ -5,6 +5,16 @@ project(LeetCodeEnterprise CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# 🛡️ ENTERPRISE STANDARD: Strict Compiler Warnings
+# This fails the build if there is even a single warning.
+if(MSVC)
+    # Windows / Visual Studio compiler flags
+    add_compile_options(/W4 /WX)
+else()
+    # Linux / Mac / MinGW compiler flags
+    add_compile_options(-Wall -Wextra -Werror)
+endif()
+
 # Download and incorporate Google Test
 include(FetchContent)
 FetchContent_Declare(
