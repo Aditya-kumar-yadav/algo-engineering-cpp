@@ -2,7 +2,7 @@ import json
 import os
 
 def main():
-    print("📝 Updating README.md safely...")
+    print("📝 Updating src/README.md safely...")
     
     # 1. Load the database
     try:
@@ -21,22 +21,27 @@ def main():
         diff = prob.get('difficulty', 'Unknown').lower()
         emoji = "🟢" if diff == "easy" else "🟡" if diff == "medium" else "🔴" if diff == "hard" else "⚪"
         file_name = f"{prob_id}_{prob['title'].lower().replace(' ', '_')}.hpp"
-        link = f"./src/{prob['category']}/{file_name}"
+        
+        # LINK CHANGE: Since README is in src/, we drop the 'src/' from the path
+        link = f"./{prob['category']}/{file_name}"
+        
         companies = ", ".join([f"`{c}`" for c in prob.get('companies', [])])
         
         table_content += f"| **{prob_id}** | [{prob['title']}]({link}) | {emoji} {prob.get('difficulty', 'Unknown')} | {prob['category'].capitalize()} | {companies} |\n"
 
-    # 3. Read the existing README line-by-line
+    # 3. Read the existing README line-by-line from the src folder
+    readme_path = 'src/README.md'
     try:
-        with open('README.md', 'r', encoding='utf-8') as f:
+        with open(readme_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
     except FileNotFoundError:
-        print("❌ Error: README.md not found in the root directory.")
+        print(f"❌ Error: {readme_path} not found.")
         return
         
     # 4. Find the exact lines where your markers live
-    start_marker = ""
-    end_marker = ""
+    # FIX: Added actual marker text so the script knows where to cut
+    start_marker = "<!-- TABLE_START -->"
+    end_marker = "<!-- TABLE_END -->"
     
     start_idx = -1
     end_idx = -1
@@ -49,8 +54,8 @@ def main():
             
     # Safety Check: Did it find both markers in the right order?
     if start_idx == -1 or end_idx == -1 or start_idx >= end_idx:
-        print("❌ Error: Markers missing or incorrectly placed in README.md.")
-        print("Ensure both and are in the file.")
+        print("❌ Error: Markers missing or incorrectly placed in src/README.md.")
+        print(f"Ensure both '{start_marker}' and '{end_marker}' are in the file.")
         return
         
     # 5. Bulletproof Injection: Stitch the top, the new table, and the bottom together
@@ -60,10 +65,10 @@ def main():
     new_readme_lines = top_half + [table_content + "\n"] + bottom_half
     
     # 6. Write it back safely
-    with open('README.md', 'w', encoding='utf-8') as f:
+    with open(readme_path, 'w', encoding='utf-8') as f:
         f.writelines(new_readme_lines)
         
-    print("✅ SUCCESS! README.md table has been updated safely.")
+    print(f"✅ SUCCESS! {readme_path} table has been updated safely.")
 
 if __name__ == "__main__":
     main()
