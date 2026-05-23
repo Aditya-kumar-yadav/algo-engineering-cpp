@@ -92,6 +92,20 @@
                 "Uber",
                 "Yahoo"
             ]
+        },
+        {
+            "id": 200,
+            "title": "Number of Islands",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Adobe",
+                "Amazon",
+                "Apple",
+                "Bloomberg",
+                "Google",
+                "Microsoft"
+            ]
         }
     ]
 }
