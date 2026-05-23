@@ -27,8 +27,7 @@ class Solution {
         if (c > 0) dfs(grid, r, c - 1);                  // Left
         if (c + 1 < grid[0].size()) dfs(grid, r, c + 1); // Right
     }
-};
- // main funtion
+    // main funtion
 public:
    int numIslands(std::vector<std::vector<char>>& grid) {
         if (grid.empty()) {
@@ -50,5 +49,4 @@ public:
         // 2. Ensure all code paths return a value
         return num_islands;
     }
-    
 };
