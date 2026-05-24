@@ -113,6 +113,23 @@
             ]
         },
         {
+            "id": 144,
+            "title": "Binary Tree Preorder Traversal",
+            "difficulty": "Easy",
+            "category": "trees",
+            "companies": [
+                "Cisco",
+                "Citadel",
+                "Google",
+                "Linkedln",
+                "Meta",
+                "NVIDIA",
+                "Oracle",
+                "Twitter",
+                "Uber"
+            ]
+        },
+        {
             "id": 200,
             "title": "Number of Islands",
             "difficulty": "Medium",
