@@ -71,12 +71,6 @@ TEST(BinaryTreePreorderTraversalTest, RightSkewedTree) {
 }
 
 TEST(BinaryTreePreorderTraversalTest, PerfectBinaryTree) {
-    // Tree:
-    //       1
-    //      / \
-    //     2   3
-    //    / \ / \
-    //   4  5 6  7
     TreeNode* root = new TreeNode(1);
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);
