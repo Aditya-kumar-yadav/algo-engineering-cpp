@@ -76,6 +76,25 @@
             ]
         },
         {
+            "id": 104,
+            "title": "Maximum Depth of Binary Tree",
+            "difficulty": "Easy",
+            "category": "trees",
+            "companies": [
+                "Adobe",
+                "Amazon",
+                "Apple",
+                "Bloomberg",
+                "Google",
+                "Intuit",
+                "Linkedln",
+                "Meta",
+                "Microsoft",
+                "Uber",
+                "Yahoo"
+            ]
+        },
+        {
             "id": 121,
             "title": "Best Time to Buy and Sell Stock",
             "difficulty": "Easy",
