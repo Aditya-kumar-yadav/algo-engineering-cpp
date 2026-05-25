@@ -1,200 +1,102 @@
-# 🚀 Automated Algorithm Engineering Repository
+# 🚀 algo-engineering-cpp
 
-[![CI Pipeline](https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions/actions/workflows/ci.yml/badge.svg)](https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions/actions)
+[![CI Pipeline](https://github.com/Aditya-kumar-yadav/algo-engineering-cpp/actions/workflows/ci.yml/badge.svg)](https://github.com/Aditya-kumar-yadav/algo-engineering-cpp/actions)
 [![Language](https://img.shields.io/badge/Language-C%2B%2B17-blue.svg)](https://isocpp.org/)
 [![Build System](https://img.shields.io/badge/Build-CMake-orange.svg)](https://cmake.org/)
 [![Testing](https://img.shields.io/badge/Testing-GoogleTest-green.svg)](https://github.com/google/googletest)
 
-A scalable and automated repository for solving algorithmic problems using modern software engineering practices.
+A scalable, fully automated architecture for solving algorithmic problems using modern software engineering practices.
 
-This project goes beyond storing LeetCode solutions by integrating:
+This repository transcends standard competitive programming storage by enforcing production-level constraints, including **Test-Driven Development (TDD)**, **Continuous Integration (CI)**, and **Dynamic Build Systems**. 
 
-* Automated testing
-* CI/CD pipelines
-* Metadata-driven documentation generation
-* Dynamic build configuration
-* Repository automation tooling
-
-The goal is to treat algorithmic problem solving with the same engineering discipline used in production software systems.
+The goal is to treat algorithmic problem-solving with the exact engineering discipline required in top-tier corporate environments.
 
 ---
 
-# ✨ Features
+## ✨ Core Features
 
-* Modern **C++17** solutions
-* Automated **Google Test** validation
-* Dynamic **CMake** build system
-* Continuous Integration using **GitHub Actions**
-* Auto-generated Markdown documentation
-* Metadata-based problem tracking
-* Python automation scripts for repository maintenance
-* Structured repository architecture for scalability
+* **Modern Standards:** Highly optimized **C++17** solutions.
+* **Automated Validation:** Strict unit testing via **Google Test**.
+* **Dynamic Compilation:** Zero-touch build system via **CMake**.
+* **CI/CD Integration:** Autonomous pipeline execution via **GitHub Actions**.
+* **Self-Documenting:** Python-driven metadata extraction and markdown generation.
 
 ---
 
-# 🏗️ Repository Structure
+## 🏗️ System Architecture
 
 ```text
-📦 Leetcode-Company-wise-Questions
- ┣ 📂 .github/workflows   # CI/CD pipelines
- ┣ 📂 hubs                # Company-wise and topic-wise indexes
- ┣ 📂 metadata            # JSON database and analytics
- ┣ 📂 scripts             # Automation utilities
- ┣ 📂 src                 # C++ solution implementations
- ┣ 📂 tests               # Google Test unit tests
- ┣ 📜 CMakeLists.txt      # Build configuration
- ┗ 📜 README.md
+📦 algo-engineering-cpp
+ ┣ 📂 .github/workflows   # GitHub Actions CI/CD pipelines
+ ┣ 📂 hubs                # Auto-generated company & topic indexes
+ ┣ 📂 metadata            # Core JSON database tracking all solutions
+ ┣ 📂 scripts             # Python automation and pipeline utilities
+ ┣ 📂 src                 # C++ algorithmic implementations (.hpp)
+ ┣ 📂 tests               # Google Test assertions (_test.cpp)
+ ┣ 📜 CMakeLists.txt      # Dynamic build configuration
+ ┣ 📜 CONTRIBUTING.md     # Developer workflow and Git hygiene rules
+ ┗ 📜 README.md           # Autonomously updated entry point
 ```
 
 ---
 
-# ⚙️ Engineering Workflow
+## ⚙️ The Engineering Lifecycle
 
 ```text
-Problem Solved
-      ↓
-Unit Tests Written
-      ↓
-GitHub Push
-      ↓
-GitHub Actions Triggered
-      ↓
-CMake Build + Test Execution
-      ↓
-Metadata Parsing
-      ↓
-Documentation Regeneration
+[ Problem Solved ] ➔ [ Google Tests Written ] ➔ [ Git Commit ] ➔ [ GitHub Push ]
+                                                                        ⬇
+[ Docs Regenerated ] ⬅ [ Metadata Extracted ] ⬅ [ CMake Build + Tests Pass ]
 ```
 
----
-
-# 🔧 Automation Tools
-
-The `/scripts` directory contains custom tooling designed to automate repository maintenance.
-
-### `start.py`
-
-Generates:
-
-* Solution boilerplate
-* Matching Google Test file
-* Standardized naming structure
-
-### `auto_discover.py`
-
-Automatically:
-
-* Scans solution directories
-* Extracts metadata
-* Updates the central JSON database
-
-### `generate_docs.py`
-
-Builds:
-
-* Markdown indexes
-* Problem tables
-* Organized documentation hubs
+### 🔧 Automation Tooling (Local & CI)
+The `/scripts` directory operates as the backbone of this repository:
+* `start.py`: Scaffolds C++ boilerplate, test files, and ensures standardized naming.
+* `auto_discover.py`: Acts as a gatekeeper, scanning for duplicate IDs and validating JSON metadata.
+* `generate_docs.py`: Autonomously builds Markdown tables, hubs, and repository indexes.
 
 ---
 
-# 🛠️ Local Setup
+## 🛠️ Local Development Setup
 
-## Prerequisites
+### Prerequisites
+* **CMake** (v3.14+)
+* **Python** (v3.10+)
+* **C++17** compatible compiler (GCC, Clang, or MSVC)
 
-* CMake
-* Python 3.x
-* C++17 compatible compiler
-
----
-
-## Clone Repository
-
+### Quick Start
 ```bash
-git clone https://github.com/Aditya-kumar-yadav/Leetcode-Company-wise-Questions.git
+# 1. Clone the repository
+git clone [https://github.com/Aditya-kumar-yadav/algo-engineering-cpp.git](https://github.com/Aditya-kumar-yadav/algo-engineering-cpp.git)
+cd algo-engineering-cpp
 
-cd Leetcode-Company-wise-Questions
-```
-
----
-
-## Configure Build
-
-```bash
+# 2. Configure the build environment
 cmake -B build -S .
-```
 
----
-
-## Compile Project
-
-```bash
+# 3. Compile the project
 cmake --build build
+
+# 4. Execute the test suite
+cd build && ctest --output-on-failure
 ```
 
 ---
 
-## Run Test Suite
+## 📊 Problem Database & Analytics
 
-```bash
-cd build
-ctest --output-on-failure
-```
+Our CI/CD pipeline autonomously maintains a central index tracking difficulty curves, company-wise frequencies, and algorithm categorization. 
 
----
-
-# 📊 Repository Goals
-
-This repository focuses on:
-
-* Clean and optimized implementations
-* Scalable repository organization
-* Automated engineering workflows
-* Consistent testing practices
-* Continuous improvement in problem-solving and software engineering
+📄 **[View Complete Solution Index](./SOLUTIONS.md)** *(Auto-generated upon merge)*
 
 ---
 
-# 📈 Problem Database
+## 🤝 Contributing
 
-The repository maintains an auto-generated index containing:
+We enforce strict rules regarding git hygiene, build modification, and testing to keep the main branch pristine. 
 
-* Solved problems
-* Difficulty tracking
-* Company-wise mapping
-* Topic categorization
-* Solution metadata
-
-## 📄 Solution Index
-
-[View Complete Database](./SOLUTIONS.md)
+If you are interested in optimizing existing logic or expanding the test coverage, please read our **[Contributing Guidelines](CONTRIBUTING.md)** before opening a Pull Request.
 
 ---
 
-# 🤝 Contributions
+## 📫 Connect
 
-Contributions, improvements, and discussions are welcome.
-
-If you find improvements related to:
-
-* optimization
-* testing
-* automation
-* documentation
-* architecture
-
-feel free to open an issue or pull request.
-
----
-
-# 📫 Connect
-
-If you're interested in:
-
-* software engineering
-* backend systems
-* competitive programming
-* automation tooling
-* scalable developer workflows
-
-feel free to explore the repository and connect.
+Built for developers interested in backend systems, C++ architecture, and automated workflows. Feel free to explore the codebase or reach out to discuss scalable engineering.
