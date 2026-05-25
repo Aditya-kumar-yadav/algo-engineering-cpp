@@ -96,7 +96,9 @@ We enforce strict rules regarding git hygiene, build modification, and testing t
 If you are interested in optimizing existing logic or expanding the test coverage, please read our **[Contributing Guidelines](CONTRIBUTING.md)** before opening a Pull Request.
 
 ---
-
 ## 📫 Connect
 
 Built for developers interested in backend systems, C++ architecture, and automated workflows. Feel free to explore the codebase or reach out to discuss scalable engineering.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/aditya-yadav-43442b323/)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-orange?logo=leetcode)](https://leetcode.com/u/AdiTheOP/)
