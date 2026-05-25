@@ -85,7 +85,7 @@ cd build && ctest --output-on-failure
 
 Our CI/CD pipeline autonomously maintains a central index tracking difficulty curves, company-wise frequencies, and algorithm categorization. 
 
-📄 **[View Complete Solution Index](./SOLUTIONS.md)** *(Auto-generated upon merge)*
+📄 **[View Complete Solution Index](./src/README.md)** *(Auto-generated upon merge)*
 
 ---
 
