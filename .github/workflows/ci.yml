@@ -5,12 +5,7 @@ on:
     branches: [ "main", "v2-enterprise-architecture", "v2" ]
   pull_request:
     branches: [ "main" ]
-
-    #-------------------updated thing here to check automation-----------------------
-    permissions:
-  contents: write
-  #----------------------------------------------------
-
+    
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
