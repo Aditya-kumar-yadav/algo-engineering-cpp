@@ -178,6 +178,20 @@
             ]
         },
         {
+            "id": 207,
+            "title": "Course Schedule",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Atlassian",
+                "Cisco",
+                "Flipkart",
+                "JP Morgan",
+                "Snowflake",
+                "Zomato"
+            ]
+        },
+        {
             "id": 733,
             "title": "Flood Fill",
             "difficulty": "Easy",
