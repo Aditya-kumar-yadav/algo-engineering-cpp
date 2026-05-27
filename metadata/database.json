@@ -192,6 +192,16 @@
             ]
         },
         {
+            "id": 542,
+            "title": "Zero One Matrix",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "DEShaw",
+                "Snowflake"
+            ]
+        },
+        {
             "id": 733,
             "title": "Flood Fill",
             "difficulty": "Easy",
