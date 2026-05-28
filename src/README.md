@@ -20,6 +20,7 @@ Welcome to my LeetCode solutions directory! All solutions here are written in **
 | **0542** | Zero One Matrix | 🟨 Medium | `Graphs` | **DEShaw**, **Snowflake** | [🔗 Link](https://leetcode.com/problems/zero-one-matrix/) | [💻 Code](./graphs/0542_zero_one_matrix.hpp) |
 | **0733** | Flood Fill | 🟩 Easy | `Graphs` | **Goldman Sachs** | [🔗 Link](https://leetcode.com/problems/flood-fill/) | [💻 Code](./graphs/0733_flood_fill.hpp) |
 | **0994** | Rotting Oranges | 🟨 Medium | `Graphs` | **Uber** | [🔗 Link](https://leetcode.com/problems/rotting-oranges/) | [💻 Code](./graphs/0994_rotting_oranges.hpp) |
+| **1020** | Number of Enclaves | 🟨 Medium | `Graphs` | **Snowflake** | [🔗 Link](https://leetcode.com/problems/number-of-enclaves/) | [💻 Code](./graphs/1020_number_of_enclaves.hpp) |
 
 [TABLE_END]
 

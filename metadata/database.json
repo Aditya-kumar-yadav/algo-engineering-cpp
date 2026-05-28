@@ -235,6 +235,15 @@
             "companies": [
                 "Uber"
             ]
+        },
+        {
+            "id": 1020,
+            "title": "Number of Enclaves",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Snowflake"
+            ]
         }
     ]
 }
