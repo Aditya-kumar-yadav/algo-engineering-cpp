@@ -147,6 +147,23 @@
             ]
         },
         {
+            "id": 130,
+            "title": "Surrounded Regions",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Amazon",
+                "Apple",
+                "Bloomberg",
+                "Cisco",
+                "Goldman Sachs",
+                "Google",
+                "Microsoft",
+                "NVIDIA",
+                "Tesla"
+            ]
+        },
+        {
             "id": 144,
             "title": "Binary Tree Preorder Traversal",
             "difficulty": "Easy",
