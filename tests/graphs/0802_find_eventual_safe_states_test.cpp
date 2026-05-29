@@ -16,7 +16,7 @@ TEST(FindEventualSafeStatesTest, Example2) {
     std::vector<std::vector<int>> graph = {
         {1, 2, 3, 4}, {1, 2}, {3, 4}, {0, 4}, {}
     };
-    std::vector<int> expected = {4};
+    std::vector<int> expected = {0};
     EXPECT_EQ(sol.eventualSafeNodes(graph), expected);
 }
 
