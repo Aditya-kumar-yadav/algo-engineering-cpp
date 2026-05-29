@@ -228,6 +228,15 @@
             ]
         },
         {
+            "id": 785,
+            "title": "Is Graph Bipartite?",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Databricks"
+            ]
+        },
+        {
             "id": 802,
             "title": "Find Eventual Safe States",
             "difficulty": "Medium",
