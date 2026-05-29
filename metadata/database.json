@@ -228,6 +228,15 @@
             ]
         },
         {
+            "id": 802,
+            "title": "Find Eventual Safe States",
+            "difficulty": "Medium",
+            "category": "graphs",
+            "companies": [
+                "Intuit"
+            ]
+        },
+        {
             "id": 994,
             "title": "Rotting Oranges",
             "difficulty": "Medium",
