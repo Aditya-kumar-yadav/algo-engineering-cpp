@@ -30,5 +30,5 @@ TEST(CourseScheduleIITest, NoPrerequisites) {
     std::vector<std::vector<int>> prerequisites = {};
     // If no prerequisites, the queue is filled from 0 to numCourses - 1
     std::vector<int> expected = {0, 1, 2, 3}; 
-    EXPECT_EQ(sol.findOrder(4, prerequisites), exected);
+    EXPECT_EQ(sol.findOrder(4, prerequisites), expected);
 }
