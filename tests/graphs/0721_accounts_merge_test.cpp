@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "graphs/721_accounts_merge.hpp" // Strictly pathed and lowercased
+#include "graphs/0721_accounts_merge.hpp" // Strictly pathed and lowercased
 
 TEST(AccountsMergeTest, Example1) {
     Solution sol;
