@@ -26,6 +26,7 @@ Welcome to my LeetCode solutions directory! All solutions here are written in **
 | **0802** | Find Eventual Safe States | 🟨 Medium | `Graphs` | **Intuit** | [🔗 Link](https://leetcode.com/problems/find-eventual-safe-states/) | [💻 Code](./graphs/0802_find_eventual_safe_states.hpp) |
 | **0994** | Rotting Oranges | 🟨 Medium | `Graphs` | **Uber** | [🔗 Link](https://leetcode.com/problems/rotting-oranges/) | [💻 Code](./graphs/0994_rotting_oranges.hpp) |
 | **1020** | Number of Enclaves | 🟨 Medium | `Graphs` | **Snowflake** | [🔗 Link](https://leetcode.com/problems/number-of-enclaves/) | [💻 Code](./graphs/1020_number_of_enclaves.hpp) |
+| **1319** | Number of Operations to Make Network Connected | 🟨 Medium | `Graphs` | - | [🔗 Link](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) | [💻 Code](./graphs/1319_number_of_operations_to_make_network_connected.hpp) |
 
 [TABLE_END]
 
