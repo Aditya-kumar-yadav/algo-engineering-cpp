@@ -253,6 +253,17 @@
             ]
         },
         {
+            "id": 329,
+            "title": "Longest Increasing Path in a Matrix",
+            "difficulty": "Hard",
+            "category": "dp",
+            "companies": [
+                "Flipkart",
+                "Intuit",
+                "Snap"
+            ]
+        },
+        {
             "id": 542,
             "title": "Zero One Matrix",
             "difficulty": "Medium",
